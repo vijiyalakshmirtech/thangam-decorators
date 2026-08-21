@@ -1,0 +1,217 @@
+import { Project } from '../types/project';
+
+/**
+ * Projects Data Source
+ *
+ * POLICY:
+ * Contains authentic stage and mandapam setups executed by P.T. Selvam (Thangam Decorators).
+ * Zero fabrication: Descriptions strictly reflect actual visible physical stage elements.
+ * Images reference production WebP assets generated from genuine client event photography.
+ */
+export const PROJECTS_DATA: Project[] = [
+  {
+    id: "proj-01",
+    slug: "grand-golden-wedding-reception-stage",
+    title: "Grand Golden Wedding Reception Stage",
+    category: "reception-stage",
+    eventType: "Wedding Reception",
+    location: "Erode, Tamil Nadu",
+    coverImage: {
+      url: "/assets/portfolio/reception/grand-golden-floral-stage.webp",
+      altText: "Grand golden wedding reception stage with circular floral arch, royal beige sofa, and illuminated candelabras",
+      width: 1600,
+      height: 900,
+      isCover: true,
+    },
+    images: [
+      {
+        url: "/assets/portfolio/reception/grand-golden-floral-stage.webp",
+        altText: "Full view of grand golden wedding reception stage with circular floral arch",
+        width: 1600,
+        height: 900,
+      },
+      {
+        url: "/assets/portfolio/reception/grand-crystal-chandelier-stage.webp",
+        altText: "Luxury evening reception stage featuring cascading floral pillars and royal seating",
+        width: 1600,
+        height: 900,
+      },
+      {
+        url: "/assets/portfolio/reception/panoramic-circular-arch-stage.webp",
+        altText: "Panoramic evening reception stage setup with circular flower arch and chandeliers",
+        width: 1599,
+        height: 720,
+      },
+      {
+        url: "/assets/portfolio/reception/geometric-floral-ring-stage.webp",
+        altText: "Contemporary wedding stage decor featuring geometric backdrop panels and glowing floral rings",
+        width: 1224,
+        height: 708,
+      },
+    ],
+    shortDescription: "Grand golden reception stage featuring circular floral arch, royal beige sofa, hanging wisteria, and illuminated candelabras.",
+    description: "Grand golden wedding reception stage setup crafted with layered golden fabric drapery, a centerpiece circular floral arch with deity emblem, royal beige sofa seating, hanging wisteria floral valance, illuminated candelabras, and warm stage spotlights.",
+    style: ["Golden Drapery", "Circular Floral Arch", "Royal Seating", "Candelabras"],
+    featured: true,
+    seoTitle: "Grand Golden Wedding Reception Stage in Erode | Thangam Decorators",
+    seoDescription: "Grand golden wedding reception stage decoration featuring circular floral arch, royal seating, and ambient lighting by Thangam Decorators.",
+  },
+  {
+    id: "proj-02",
+    slug: "gold-lattice-circular-floral-mandapam",
+    title: "Gold Lattice Circular Floral Mandapam",
+    category: "traditional-mandapam",
+    eventType: "Traditional Wedding & Muhurtham",
+    location: "Erode, Tamil Nadu",
+    coverImage: {
+      url: "/assets/portfolio/traditional-mandapam/gold-jali-circular-floral-stage.webp",
+      altText: "Luxury wedding stage featuring gold laser-cut jali frame, red and white rose circular arch, and chaise lounge",
+      width: 1599,
+      height: 1200,
+      isCover: true,
+    },
+    images: [
+      {
+        url: "/assets/portfolio/traditional-mandapam/gold-jali-circular-floral-stage.webp",
+        altText: "Gold laser-cut lattice arch frame with circular floral wreath and chaise lounge",
+        width: 1599,
+        height: 1200,
+      },
+      {
+        url: "/assets/portfolio/traditional-mandapam/gold-arch-muhurtham-stage.webp",
+        altText: "Traditional Muhurtham stage with gold architectural frame and ceremonial carpet",
+        width: 1599,
+        height: 1200,
+      },
+      {
+        url: "/assets/portfolio/traditional-mandapam/greenery-mat-floral-panel-stage.webp",
+        altText: "Traditional stage setup with fresh greenery mat backdrop, yellow valance, and floral tiles",
+        width: 1599,
+        height: 1200,
+      },
+    ],
+    shortDescription: "Traditional Muhurtham stage featuring gold laser-cut jali frame, red and white rose circular arch, and chaise lounge.",
+    description: "Traditional wedding stage architecture designed with an ornate gold laser-cut jali framework, red and white rose circular floral wreath, luxury chaise lounge, twin floral urn pedestals, and traditional red-and-gold carpet flooring.",
+    style: ["Gold Jali Frame", "Circular Rose Arch", "Chaise Lounge", "Floral Pedestals"],
+    featured: true,
+    seoTitle: "Traditional Gold Lattice Wedding Mandapam Decor | Thangam Decorators",
+    seoDescription: "Traditional Muhurtham stage decoration with gold jali architectural frame and circular floral wreath by Thangam Decorators.",
+  },
+  {
+    id: "proj-03",
+    slug: "seemantham-cradle-ceremony-stage",
+    title: "Traditional Seemantham & Cradle Ceremony Stage",
+    category: "pre-wedding",
+    eventType: "Seemantham & Family Ceremony",
+    location: "Erode, Tamil Nadu",
+    coverImage: {
+      url: "/assets/portfolio/family-ceremonies/seemantham-cradle-ceremony-stage.webp",
+      altText: "Traditional Seemantham and baby shower ceremony stage with decorative cradle, seeru thattu gift trays, and purple floral backdrop",
+      width: 1600,
+      height: 900,
+      isCover: true,
+    },
+    images: [
+      {
+        url: "/assets/portfolio/family-ceremonies/seemantham-cradle-ceremony-stage.webp",
+        altText: "Seemantham ceremony stage with decorative miniature cradle and seeru thattu gift trays",
+        width: 1600,
+        height: 900,
+      },
+      {
+        url: "/assets/portfolio/family-ceremonies/maroon-valance-floral-ring-stage.webp",
+        altText: "Festive stage backdrop with scalloped maroon valance, circular floral wreath, and green royal sofa",
+        width: 1152,
+        height: 648,
+      },
+    ],
+    shortDescription: "Traditional ceremony stage with decorative cradle, seeru thattu gift trays, floral swing, and royal seating.",
+    description: "Authentic traditional family ceremony stage designed for Seemantham and baby shower rituals, featuring decorated seeru thattu fruit and sweet trays, handcrafted miniature cradle (thottil), floral swing, purple fabric backdrop with white floral hangings, and royal green-and-gold seating.",
+    style: ["Seeru Thattu Trays", "Miniature Cradle (Thottil)", "Floral Swing", "Purple & Gold Backdrop"],
+    featured: true,
+    seoTitle: "Traditional Seemantham & Baby Shower Stage Decor | Thangam Decorators",
+    seoDescription: "Traditional Seemantham and family ceremony stage decoration with decorative cradle and seeru thattu by Thangam Decorators.",
+  },
+  {
+    id: "proj-04",
+    slug: "traditional-banana-leaf-parrot-stage",
+    title: "Auspicious Banana Leaf & Parrot Cultural Stage",
+    category: "temple-cultural",
+    eventType: "Cultural & Traditional Ceremony",
+    location: "Erode, Tamil Nadu",
+    coverImage: {
+      url: "/assets/portfolio/traditional-mandapam/traditional-banana-leaf-parrot-stage.webp",
+      altText: "Auspicious South Indian stage with fresh banana leaf backdrop, handcrafted green parrots, mother-child emblem, and gold borders",
+      width: 1599,
+      height: 1200,
+      isCover: true,
+    },
+    images: [
+      {
+        url: "/assets/portfolio/traditional-mandapam/traditional-banana-leaf-parrot-stage.webp",
+        altText: "Fresh banana leaf backdrop with hanging green parrots and gold border frames",
+        width: 1599,
+        height: 1200,
+      },
+      {
+        url: "/assets/portfolio/traditional-mandapam/auspicious-green-gold-mandapam.webp",
+        altText: "Traditional green and gold Vedic wedding mandapam decor with floral hangings",
+        width: 1599,
+        height: 1200,
+      },
+    ],
+    shortDescription: "Auspicious South Indian stage with natural banana leaf backdrop, handcrafted green parrots, and gold lattice borders.",
+    description: "Traditional South Indian cultural stage decor featuring an auspicious fresh banana leaf backdrop, handcrafted hanging parrots, ceremonial gold-embellished border framing, central symbolic crest, and floral border accents along the stage edge.",
+    style: ["Banana Leaf Backdrop", "Handcrafted Parrots", "Gold Border Frames", "Traditional Stage Border"],
+    featured: false,
+    seoTitle: "Auspicious Banana Leaf & Cultural Stage Decor | Thangam Decorators",
+    seoDescription: "Traditional South Indian cultural and temple stage decoration with banana leaf backdrop and handcrafted parrots by Thangam Decorators.",
+  },
+  {
+    id: "proj-05",
+    slug: "palace-jharokha-theme-reception-stage",
+    title: "Palace Jharokha Theme Wedding Reception Stage",
+    category: "reception-stage",
+    eventType: "Wedding Reception",
+    location: "Erode, Tamil Nadu",
+    coverImage: {
+      url: "/assets/portfolio/reception/jharokha-gold-valance-heart-stage.webp",
+      altText: "Palace theme wedding stage with golden jharokha window niches, yellow valance drapes, floral heart, and white pedestals",
+      width: 1600,
+      height: 757,
+      isCover: true,
+    },
+    images: [
+      {
+        url: "/assets/portfolio/reception/jharokha-gold-valance-heart-stage.webp",
+        altText: "Golden jharokha window frames with central red and white floral heart backdrop",
+        width: 1600,
+        height: 757,
+      },
+      {
+        url: "/assets/portfolio/reception/white-drape-red-rose-heart-stage.webp",
+        altText: "Romantic reception stage with white drapery, red rose heart backdrop, and twin floral urns",
+        width: 1152,
+        height: 648,
+      },
+      {
+        url: "/assets/portfolio/reception/wide-royal-reception-backdrop.webp",
+        altText: "Wide panoramic royal reception stage backdrop with floral columns and ambient lighting",
+        width: 1600,
+        height: 757,
+      },
+      {
+        url: "/assets/portfolio/reception/golden-glow-reception-stage.webp",
+        altText: "Evening reception stage with warm golden illumination and structured drapery",
+        width: 1599,
+        height: 720,
+      },
+    ],
+    shortDescription: "Palace theme stage featuring golden jharokha window niches, scalloped yellow valance drapes, floral heart, and white pedestals.",
+    description: "Palace-inspired wedding reception stage setup with architectural golden jharokha window niches, rich scalloped yellow valance drapes, central red and white floral heart wreath, white decorative pedestals with floral toppers, and luxury seating.",
+    style: ["Golden Jharokha", "Floral Heart", "Scalloped Valance", "White Pedestals"],
+    featured: true,
+    seoTitle: "Palace Jharokha Theme Wedding Stage Decor | Thangam Decorators",
+    seoDescription: "Palace theme wedding reception stage decoration featuring golden jharokha windows and floral heart backdrop by Thangam Decorators.",
+  },
+];
