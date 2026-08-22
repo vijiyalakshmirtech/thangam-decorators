@@ -2,109 +2,122 @@ import React from 'react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
+import { MagneticButton } from '../components/common/MagneticButton';
 import { ImageWrapper } from '../components/common/ImageWrapper';
+import { Stage3DCanvas } from '../components/3d/Stage3DCanvas';
 import { siteConfig } from '../config/site';
 import { generateWhatsAppUrl, generateTelUrl } from '../utils/urlHelpers';
 import { trackEvent } from '../lib/analytics';
-import { 
-  Sparkles, 
-  MessageCircle, 
-  Phone, 
-  ChevronDown, 
-  MapPin, 
-  ShieldCheck, 
-  Flower2
+import {
+  Sparkles,
+  MessageCircle,
+  Phone,
+  ChevronDown,
+  ShieldCheck,
+  Flower2,
+  Crown
 } from 'lucide-react';
 
 export interface HeroProps {
   id?: string;
   className?: string;
+  onOpenQuoteModal?: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   id = 'hero',
   className = '',
+  onOpenQuoteModal,
 }) => {
   const whatsAppUrl = generateWhatsAppUrl(
     `Hello P.T. Selvam, I would like to inquire about wedding stage decoration for our upcoming event.`
   );
   const telUrl = generateTelUrl(siteConfig.contact.phonePrimary);
 
-  const handlePrimaryCtaClick = () => {
-    trackEvent('cta_click', {
-      sourceLocation: 'hero_primary_cta',
-      ctaText: 'Explore Collections',
-    });
-  };
-
-  const handleWhatsAppClick = () => {
-    trackEvent('whatsapp_click', {
-      sourceLocation: 'hero_secondary_cta',
-      intent: 'general_stage_inquiry',
-    });
-  };
-
-  const handlePhoneClick = () => {
-    trackEvent('phone_click', {
-      sourceLocation: 'hero_call_cta',
-    });
-  };
-
   return (
     <section
       id={id}
-      className={`relative min-h-[90vh] lg:min-h-screen flex items-center justify-center pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 bg-thangam-dark-950 overflow-hidden ${className}`}
+      className={`relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-16 sm:pt-36 sm:pb-24 bg-[#F7F0E4] overflow-hidden ${className}`}
       aria-labelledby="hero-heading"
     >
-      {/* Background ambient lighting effects */}
-      <div 
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] sm:h-[500px] bg-thangam-gold-500/10 blur-[140px] rounded-full pointer-events-none" 
-        aria-hidden="true" 
+      {/* 3D Depth Canvas & Atmospheric Background */}
+      <Stage3DCanvas className="z-0" />
+
+      {/* Ambient Luxury Gradients */}
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] sm:h-[500px] bg-[#C9A45C]/12 blur-[140px] rounded-full pointer-events-none"
+        aria-hidden="true"
       />
-      <div 
-        className="absolute top-10 right-10 w-[300px] h-[300px] bg-thangam-emerald-700/10 blur-[100px] rounded-full pointer-events-none" 
-        aria-hidden="true" 
+      <div
+        className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#6E1830]/8 blur-[120px] rounded-full pointer-events-none"
+        aria-hidden="true"
       />
 
       <Container size="default" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column: Hero Editorial Copy */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          {/* Left Column: Hero Luxury Typography & Dual Language Branding */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-            {/* Eyebrow Badge */}
-            <div className="mb-4 sm:mb-6">
-              <Badge variant="gold" icon={<Sparkles className="w-3.5 h-3.5" />}>
-                Bespoke Stage Scenography & Floral Artistry
+
+            {/* Dual Language Tamil & English Eyebrow Badge */}
+            <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <Badge variant="gold" icon={<Crown className="w-3.5 h-3.5 text-[#6E1830]" />}>
+                Bespoke Luxury Event Décor
               </Badge>
+              <span className="font-tamil text-xs font-semibold text-[#6E1830] bg-[#FFFDF8] px-3 py-1 rounded-full border border-[#C9A45C]/40">
+                தங்கம் டெக்கரேட்டர்ஸ்
+              </span>
+            </div>
+
+            {/* Tamil Service Badge & Heritage Identity */}
+            <div className="font-tamil text-sm sm:text-base font-semibold text-[#C9A45C] tracking-wide mb-2">
+              மேடை அலங்காரம் • திருமண முகூர்த்த மண்டபங்கள்
             </div>
 
             {/* Main Primary Headline */}
             <h1
               id="hero-heading"
-              className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-thangam-ivory-50 tracking-tight leading-[1.12] mb-4 sm:mb-6"
+              className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium text-[#6E1830] tracking-tight leading-[1.08] mb-5 sm:mb-6"
             >
-              Crafting Grandeur for Your{' '}
-              <span className="text-thangam-gold-400 font-serif italic">
-                Most Sacred Celebrations
+              Crafting Extraordinary Stages for{' '}
+              <span className="font-serif italic text-[#C9A45C] block sm:inline">
+                Extraordinary Moments.
               </span>
             </h1>
 
             {/* Value Proposition / Subheadline */}
-            <p className="text-sm sm:text-base md:text-lg text-thangam-ivory-100/80 max-w-2xl leading-relaxed mb-6 sm:mb-8 font-sans">
-              Led by <strong className="text-thangam-gold-300 font-semibold">{siteConfig.brand.ownerName}</strong>,{' '}
-              {siteConfig.brand.name} transforms traditional wedding mandapams, grand reception halls, and intimate family ceremonies into magnificent royal stages across Erode and Western Tamil Nadu.
+            <p className="text-base sm:text-lg text-[#1F161A]/80 max-w-2xl leading-relaxed mb-8 sm:mb-10 font-light">
+              Led by master artisan <strong className="text-[#6E1830] font-semibold">{siteConfig.brand.ownerName}</strong>,{' '}
+              {siteConfig.brand.name} curates breathtaking architectural mandapams, imperial reception stages, and fresh floral scenography across Erode and Western Tamil Nadu.
             </p>
 
             {/* Action Buttons Group */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto mb-8 sm:mb-10">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto mb-10">
+              {onOpenQuoteModal && (
+                <MagneticButton strength={0.3}>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={() => {
+                      trackEvent('cta_click', { sourceLocation: 'hero_primary', ctaText: 'Book Your Event' });
+                      onOpenQuoteModal();
+                    }}
+                    leftIcon={<Sparkles className="w-4 h-4 text-[#C9A45C]" />}
+                    className="w-full sm:w-auto uppercase tracking-wider text-xs font-bold"
+                  >
+                    Book Your Event
+                  </Button>
+                </MagneticButton>
+              )}
+
               <Button
-                variant="primary"
+                variant="secondary"
                 size="lg"
                 href="#portfolio"
-                leftIcon={<Sparkles className="w-4 h-4" />}
-                onClick={handlePrimaryCtaClick}
-                className="w-full sm:w-auto"
+                leftIcon={<Sparkles className="w-4 h-4 text-[#6E1830]" />}
+                className="w-full sm:w-auto uppercase tracking-wider text-xs font-semibold"
+                onClick={() => trackEvent('cta_click', { sourceLocation: 'hero_secondary', ctaText: 'Explore Our Work' })}
               >
-                Explore Collections
+                Explore Our Work
               </Button>
 
               {whatsAppUrl && (
@@ -114,10 +127,10 @@ export const Hero: React.FC<HeroProps> = ({
                   href={whatsAppUrl}
                   target="_blank"
                   leftIcon={<MessageCircle className="w-4 h-4" />}
-                  onClick={handleWhatsAppClick}
-                  className="w-full sm:w-auto"
+                  onClick={() => trackEvent('whatsapp_click', { sourceLocation: 'hero_whatsapp' })}
+                  className="w-full sm:w-auto text-xs uppercase tracking-wider font-semibold"
                 >
-                  Inquire on WhatsApp
+                  WhatsApp Inquiry
                 </Button>
               )}
 
@@ -125,76 +138,76 @@ export const Hero: React.FC<HeroProps> = ({
                 variant="ghost"
                 size="lg"
                 href={telUrl}
-                leftIcon={<Phone className="w-4 h-4 text-thangam-gold-400" />}
-                onClick={handlePhoneClick}
-                className="w-full sm:w-auto text-xs sm:text-sm"
+                leftIcon={<Phone className="w-4 h-4 text-[#6E1830]" />}
+                onClick={() => trackEvent('phone_click', { sourceLocation: 'hero_call' })}
+                className="w-full sm:w-auto text-xs uppercase tracking-wider text-[#6E1830] hover:text-[#4A1022] font-semibold"
               >
                 Call {siteConfig.contact.phonePrimary}
               </Button>
             </div>
 
             {/* Factual Trust Indicators */}
-            <div className="pt-6 border-t border-white/10 w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+            <div className="pt-6 border-t border-[#C9A45C]/30 w-full grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-4 h-4 text-thangam-gold-400 flex-shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#6E1830] flex-shrink-0" />
                 <div>
-                  <div className="text-xs font-semibold text-thangam-ivory-50">Proprietor Led</div>
-                  <div className="text-[11px] text-thangam-ivory-100/60 font-serif">P.T. Selvam Supervision</div>
+                  <div className="text-xs font-semibold text-[#6E1830]">25+ Years Experience</div>
+                  <div className="text-[11px] text-[#1F161A]/70 font-serif">P.T. Selvam Direct Supervision</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Flower2 className="w-4 h-4 text-thangam-gold-400 flex-shrink-0" />
+                <Flower2 className="w-4 h-4 text-[#6E1830] flex-shrink-0" />
                 <div>
-                  <div className="text-xs font-semibold text-thangam-ivory-50">Fresh Florals</div>
-                  <div className="text-[11px] text-thangam-ivory-100/60 font-serif">Direct Daily Sourcing</div>
+                  <div className="text-xs font-semibold text-[#6E1830]">Daily Fresh Florals</div>
+                  <div className="text-[11px] text-[#1F161A]/70 font-serif">Direct Morning Sourcing</div>
                 </div>
               </div>
 
               <div className="col-span-2 sm:col-span-1 flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-thangam-gold-400 flex-shrink-0" />
+                <Crown className="w-4 h-4 text-[#6E1830] flex-shrink-0" />
                 <div>
-                  <div className="text-xs font-semibold text-thangam-ivory-50">Erode & Kongu</div>
-                  <div className="text-[11px] text-thangam-ivory-100/60 font-serif">Regional Execution</div>
+                  <div className="text-xs font-semibold text-[#6E1830]">In-House Inventory</div>
+                  <div className="text-[11px] text-[#1F161A]/70 font-serif">100% Reliable Execution</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Authentic Luxury Visual Card */}
+          {/* Right Column: Authentic Luxury Visual Card with 3D Depth */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-lg lg:max-w-none">
-              {/* Outer decorative ambient frame */}
-              <div className="absolute -inset-1.5 bg-gradient-to-tr from-thangam-gold-600/30 via-thangam-gold-400/20 to-transparent rounded-3xl blur-sm" />
+            <div className="relative w-full max-w-lg lg:max-w-none group">
+              {/* Outer decorative gold accent halo */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-[#6E1830]/20 via-[#C9A45C]/30 to-transparent rounded-3xl blur-md group-hover:blur-lg transition-all duration-500" />
 
-              <div className="relative rounded-2xl overflow-hidden border border-thangam-gold-500/30 bg-thangam-dark-900 shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden border border-[#C9A45C]/50 bg-[#FFFDF8] shadow-[0_15px_50px_rgba(110,24,48,0.12)]">
                 {/* Authentic Primary Hero Photograph */}
                 <ImageWrapper
                   src="/assets/portfolio/hero/hero-primary.webp"
                   alt="Grand golden wedding reception stage with circular floral arch and royal seating by Thangam Decorators"
                   aspectRatio="16/9"
                   priority={true}
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                {/* Ambient dark gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-thangam-dark-950/90 via-transparent to-transparent pointer-events-none" />
+                {/* Ambient Subtle Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#300713]/85 via-transparent to-transparent pointer-events-none" />
 
                 {/* Bottom Overlay Card Details */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 flex items-end justify-between gap-3 pointer-events-none">
+                <div className="absolute bottom-0 inset-x-0 p-5 flex items-end justify-between gap-3 pointer-events-none">
                   <div>
-                    <span className="text-[10px] font-semibold tracking-wider uppercase text-thangam-gold-400 block mb-1">
-                      Grand Reception Stage
+                    <span className="text-[10px] font-semibold tracking-widest uppercase text-[#C9A45C] block mb-1">
+                      Grand Reception Scenography
                     </span>
-                    <p className="text-sm font-serif font-bold text-thangam-ivory-50 leading-tight">
+                    <p className="text-base font-serif font-bold text-[#FFFDF8] leading-tight">
                       Circular Floral Arch & Royal Candelabras
                     </p>
-                    <span className="text-[11px] text-thangam-ivory-100/70 font-sans block mt-0.5">
+                    <span className="text-[11px] text-[#F7F0E4]/80 font-sans block mt-0.5">
                       Executed in Erode, Tamil Nadu
                     </span>
                   </div>
 
-                  <Badge variant="emerald" className="text-[10px] px-2 py-0.5 whitespace-nowrap">
+                  <Badge variant="gold" className="text-[10px] px-2.5 py-0.5 whitespace-nowrap bg-[#FFFDF8] text-[#6E1830]">
                     Authentic Setup
                   </Badge>
                 </div>
@@ -203,15 +216,15 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Scroll Cue Towards Portfolio */}
-        <div className="mt-12 sm:mt-16 flex justify-center">
+        {/* Scroll Cue Towards Brand Intro */}
+        <div className="mt-14 sm:mt-18 flex justify-center">
           <a
-            href="#portfolio"
-            aria-label="Scroll down to Portfolio gallery"
-            className="group flex flex-col items-center gap-2 text-xs font-serif text-thangam-ivory-100/50 hover:text-thangam-gold-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-thangam-gold-400 rounded-full p-2"
+            href="#brand-intro"
+            aria-label="Scroll down to explore Thangam Decorators"
+            className="group flex flex-col items-center gap-2 text-xs font-serif text-[#6E1830]/70 hover:text-[#6E1830] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C] rounded-full p-2"
           >
-            <span className="tracking-widest uppercase text-[10px]">Explore Collections</span>
-            <ChevronDown className="w-4 h-4 text-thangam-gold-400 animate-bounce group-hover:text-thangam-gold-300 transition-colors" />
+            <span className="tracking-[0.25em] uppercase text-[9px] font-semibold">Discover Our Artistry</span>
+            <ChevronDown className="w-4 h-4 text-[#C9A45C] animate-bounce group-hover:text-[#6E1830] transition-colors" />
           </a>
         </div>
       </Container>

@@ -54,17 +54,17 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#300713]/95 backdrop-blur-xl p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Image Lightbox Viewer"
     >
       {/* Top Bar */}
       <div className="absolute top-4 inset-x-4 flex items-center justify-between z-20 max-w-6xl mx-auto">
-        <div className="text-thangam-ivory-50 text-sm sm:text-base font-medium truncate pr-4">
-          <span className="text-thangam-gold-400 font-serif">{projectTitle}</span>
+        <div className="text-[#FFFDF8] text-sm sm:text-base font-medium truncate pr-4">
+          <span className="text-[#C9A45C] font-serif text-lg sm:text-xl font-bold">{projectTitle}</span>
           {images.length > 1 && (
-            <span className="text-thangam-ivory-100/50 text-xs ml-2">
+            <span className="text-[#F7F0E4]/60 text-xs ml-2">
               ({currentIndex + 1} of {images.length})
             </span>
           )}
@@ -74,9 +74,9 @@ export const Lightbox: React.FC<LightboxProps> = ({
           type="button"
           onClick={onClose}
           aria-label="Close lightbox"
-          className="p-2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-thangam-gold-400"
+          className="p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
         >
-          <X className="w-6 h-6" />
+          <X className="w-6 h-6 text-[#C9A45C]" />
         </button>
       </div>
 
@@ -88,7 +88,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             disabled={currentIndex === 0}
             onClick={() => onNavigate(currentIndex - 1)}
             aria-label="Previous image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white bg-black/50 hover:bg-black/80 rounded-full border border-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-thangam-gold-400"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-[#FFFDF8] hover:text-[#C9A45C] bg-[#4A1022]/80 hover:bg-[#4A1022] rounded-full border border-[#C9A45C]/35 transition-all disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C] shadow-lg"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -98,7 +98,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             disabled={currentIndex === images.length - 1}
             onClick={() => onNavigate(currentIndex + 1)}
             aria-label="Next image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white/80 hover:text-white bg-black/50 hover:bg-black/80 rounded-full border border-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-thangam-gold-400"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-[#FFFDF8] hover:text-[#C9A45C] bg-[#4A1022]/80 hover:bg-[#4A1022] rounded-full border border-[#C9A45C]/35 transition-all disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C] shadow-lg"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -110,12 +110,12 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <img
           src={currentImage.url}
           alt={currentImage.altText}
-          className="max-w-full max-h-[72vh] object-contain rounded-lg shadow-2xl"
+          className="max-w-full max-h-[72vh] object-contain rounded-xl shadow-2xl border border-[#C9A45C]/30"
         />
 
         {/* Caption & Inquiry CTA */}
         <div className="mt-4 flex flex-col sm:flex-row items-center justify-between w-full gap-3 text-center sm:text-left">
-          <p className="text-xs sm:text-sm text-thangam-ivory-100/80">
+          <p className="text-xs sm:text-sm text-[#F7F0E4]/85 font-light">
             {currentImage.caption || currentImage.altText}
           </p>
 
@@ -126,6 +126,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
               href={whatsAppUrl}
               target="_blank"
               leftIcon={<MessageCircle className="w-4 h-4" />}
+              className="text-xs font-semibold"
               onClick={() =>
                 trackEvent('whatsapp_click', {
                   sourceLocation: 'lightbox',

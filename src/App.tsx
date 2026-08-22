@@ -1,77 +1,115 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { MobileStickyBar } from './components/layout/MobileStickyBar';
-import { Container } from './components/common/Container';
-import { SectionHeading } from './components/common/SectionHeading';
 import { Modal } from './components/common/Modal';
+import { CustomCursor } from './components/common/CustomCursor';
 import { ContactForm } from './components/ui/ContactForm';
-import { EmptyState } from './components/ui/EmptyState';
+
+// Sections in Luxury Flow
 import { Hero } from './sections/Hero';
-import { Services } from './sections/Services';
+import { BrandIntro } from './sections/BrandIntro';
+import { TransformationExperience } from './sections/TransformationExperience';
+import { SignatureDecorations } from './sections/SignatureDecorations';
+import { StageShowroom } from './sections/StageShowroom';
 import { Portfolio } from './sections/Portfolio';
-import { About } from './sections/About';
+import { WhyThangam } from './sections/WhyThangam';
+import { Process } from './sections/Process';
+import { BrandStatement } from './sections/BrandStatement';
+import { Services } from './sections/Services';
 import { Faqs } from './sections/Faqs';
 import { Contact } from './sections/Contact';
-import { siteConfig } from './config/site';
-import { TESTIMONIALS_DATA } from './data/testimonials';
-import { Sparkles } from 'lucide-react';
+
+// Smooth Scroll & Animations
+import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const App: React.FC = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
+  useEffect(() => {
+    // Initialize Lenis smooth scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    // Synchronize Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
+    const updateLenis = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(updateLenis);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      gsap.ticker.remove(updateLenis);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col bg-thangam-dark-950 text-thangam-ivory-50 antialiased selection:bg-thangam-gold-500 selection:text-thangam-dark-950">
+    <div className="min-h-screen flex flex-col bg-[#F7F0E4] text-[#1F161A] font-sans antialiased selection:bg-[#6E1830] selection:text-[#FFFDF8]">
+      {/* 0. Custom Magnetic Luxury Cursor (Desktop) */}
+      <CustomCursor />
+
       {/* 1. Header Layout */}
       <Header onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-      {/* 2. Main Content Foundation Area */}
-      <main id="home" className="flex-grow pt-24 sm:pt-28 pb-16">
-        {/* Hero Section */}
-        <Hero />
+      {/* 2. Main Content Foundation Flow */}
+      <main id="home" className="flex-grow">
+        {/* Cinematic 3D Hero */}
+        <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* Services Section */}
-        <Services />
+        {/* Section 01: Brand Intro ("WE DESIGN MOMENTS.") */}
+        <BrandIntro id="brand-intro" />
 
-        {/* Portfolio Showcase Section */}
-        <Portfolio />
+        {/* Section 02: Transformation Experience ("HOW A VENUE BECOMES A PALACE.") */}
+        <TransformationExperience id="experience" />
 
-        {/* About / Heritage & Trust Section */}
-        <About />
+        {/* Section 03: Signature Decor Categories */}
+        <SignatureDecorations id="decorations" onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* FAQs Section */}
-        <Faqs />
+        {/* Section 04: Interactive Stage Showroom ("THE STAGE IS THE MOMENT.") */}
+        <StageShowroom id="showroom" onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* Testimonials Empty State Handling */}
-        <section id="testimonials" className="py-16 border-b border-white/5">
-          <Container size="narrow">
-            <SectionHeading
-              eyebrow="Zero-Fabrication Policy"
-              title="Client Testimonials Module"
-              description="The UI handles empty testimonial datasets gracefully without broken layouts."
-            />
+        {/* Section 05: Master Stage Scenography Portfolio */}
+        <Portfolio id="portfolio" />
 
-            {TESTIMONIALS_DATA.length === 0 ? (
-              <EmptyState
-                title="Client Testimonials Under Review"
-                description={`Verified reviews from ${siteConfig.brand.ownerName}'s past weddings and events will be published upon client confirmation.`}
-                actionText="Request Direct Consultation"
-                onAction={() => setIsQuoteModalOpen(true)}
-                icon={<Sparkles className="w-8 h-8 text-thangam-gold-400" />}
-              />
-            ) : null}
-          </Container>
-        </section>
+        {/* Section 06: Why Thangam & Founder Pillars */}
+        <WhyThangam id="why-thangam" />
 
-        {/* Contact / Consultation Section */}
-        <Contact />
+        {/* Section 07: 5-Step Process */}
+        <Process id="process" />
+
+        {/* Section 08: Full-width Burgundy Brand Statement ("YOUR EVENT. OUR ART.") */}
+        <BrandStatement id="statement" onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
+
+        {/* Supporting Services Grid */}
+        <Services id="services" />
+
+        {/* FAQs */}
+        <Faqs id="faqs" />
+
+        {/* Contact / Consultation Suite */}
+        <Contact id="contact" />
       </main>
 
-      {/* 3. Reusable Quote Consultation Modal */}
+      {/* 3. Reusable Consultation Modal */}
       <Modal
         isOpen={isQuoteModalOpen}
         onClose={() => setIsQuoteModalOpen(false)}
-        title="Request Event Stage Consultation"
+        title="Book Your Event Decor"
         maxWidth="lg"
       >
         <ContactForm onSuccess={() => setIsQuoteModalOpen(false)} />

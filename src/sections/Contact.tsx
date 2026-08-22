@@ -7,11 +7,11 @@ import { ContactForm } from '../components/ui/ContactForm';
 import { siteConfig } from '../config/site';
 import { generateWhatsAppUrl, generateTelUrl, generateMailtoUrl } from '../utils/urlHelpers';
 import { trackEvent } from '../lib/analytics';
-import { 
-  Sparkles, 
-  Phone, 
-  MessageCircle, 
-  Mail, 
+import {
+  Sparkles,
+  Phone,
+  MessageCircle,
+  Mail,
   MapPin
 } from 'lucide-react';
 
@@ -37,23 +37,23 @@ export const Contact: React.FC<ContactProps> = ({
   return (
     <section
       id={id}
-      className={`py-16 sm:py-20 md:py-24 bg-thangam-dark-950 relative border-t border-white/5 ${className}`}
+      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
       aria-labelledby="contact-heading"
     >
       {/* Subtle ambient lighting */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-thangam-gold-500/5 blur-[160px] rounded-full pointer-events-none" 
-        aria-hidden="true" 
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#C9A45C]/10 blur-[160px] rounded-full pointer-events-none"
+        aria-hidden="true"
       />
 
       <Container size="default" className="relative z-10">
         {/* Section Heading */}
         <SectionHeading
           eyebrow="Direct Consultation"
-          title="Plan Your Sacred Celebration"
-          subtitle={`Connect directly with ${siteConfig.brand.ownerName} for bespoke stage decor`}
-          description="Whether you are organizing a traditional Vedic wedding mandapam, a royal evening reception, or an intimate family ceremony, we are here to craft your ideal setting."
-          className="mb-12 sm:mb-16"
+          title="LET'S CREATE YOUR DREAM STAGE."
+          subtitle="உங்கள் கனவு மேடையை உருவாக்க இன்றே தொடர்புகொள்ளுங்கள்"
+          description="Whether you are organizing a traditional Vedic wedding mandapam, a royal evening reception, or an intimate family ceremony, P.T. Selvam is here to craft your ideal setting."
+          className="mb-14 sm:mb-20"
         />
 
         {/* Two-Column Editorial Layout */}
@@ -62,21 +62,21 @@ export const Contact: React.FC<ContactProps> = ({
           <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <Badge variant="gold" icon={<Sparkles className="w-3 h-3" />}>
+                <Badge variant="gold" icon={<Sparkles className="w-3 h-3 text-[#6E1830]" />}>
                   Direct Proprietor Access
                 </Badge>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-thangam-ivory-50 leading-snug mb-3">
-                Speak Directly with Master Decorator P.T. Selvam
+              <h3 className="text-2xl sm:text-4xl font-serif font-bold text-[#6E1830] leading-snug mb-3">
+                Speak Directly with P.T. Selvam
               </h3>
 
-              <p className="text-xs sm:text-sm text-thangam-ivory-100/75 leading-relaxed mb-6 font-sans">
+              <p className="text-sm text-[#1F161A]/80 leading-relaxed mb-6 font-light">
                 Every wedding stage is unique. Discuss your kalyana mandapam dimensions, auspicious muhurtham hours, and floral preferences directly with our founder.
               </p>
 
               {/* Direct Channels List */}
-              <div className="space-y-3.5">
+              <div className="space-y-4">
                 {/* Primary Phone */}
                 <a
                   href={primaryTelUrl}
@@ -86,19 +86,19 @@ export const Contact: React.FC<ContactProps> = ({
                       phoneType: 'primary',
                     })
                   }
-                  className="flex items-center gap-4 p-4 rounded-xl bg-thangam-dark-900/90 border border-thangam-gold-500/20 hover:border-thangam-gold-500/50 transition-all duration-300 group"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-[#FFFDF8] border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 shadow-sm group"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-thangam-gold-500/10 border border-thangam-gold-500/25 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Phone className="w-5 h-5 text-thangam-gold-400" />
+                  <div className="w-12 h-12 rounded-xl bg-[#6E1830] text-[#FFFDF8] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-md">
+                    <Phone className="w-5 h-5 text-[#C9A45C]" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-wider text-thangam-gold-400">
+                    <div className="text-[10px] font-semibold uppercase tracking-widest text-[#C9A45C]">
                       Primary Consultation Line
                     </div>
-                    <div className="text-base sm:text-lg font-serif font-bold text-thangam-ivory-50 group-hover:text-thangam-gold-300 transition-colors">
+                    <div className="text-lg sm:text-xl font-serif font-bold text-[#6E1830] group-hover:text-[#4A1022] transition-colors">
                       {siteConfig.contact.phonePrimary}
                     </div>
-                    <div className="text-[11px] text-thangam-ivory-100/50 font-sans">
+                    <div className="text-xs text-[#1F161A]/70 font-sans">
                       P.T. Selvam (Direct)
                     </div>
                   </div>
@@ -113,16 +113,16 @@ export const Contact: React.FC<ContactProps> = ({
                       phoneType: 'secondary',
                     })
                   }
-                  className="flex items-center gap-4 p-4 rounded-xl bg-thangam-dark-900/90 border border-white/10 hover:border-thangam-gold-500/40 transition-all duration-300 group"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-[#FFFDF8] border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 shadow-sm group"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Phone className="w-5 h-5 text-thangam-ivory-100/70" />
+                  <div className="w-12 h-12 rounded-xl bg-[#6E1830]/10 border border-[#C9A45C]/40 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Phone className="w-5 h-5 text-[#6E1830]" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-wider text-thangam-ivory-100/60">
+                    <div className="text-[10px] font-semibold uppercase tracking-widest text-[#C9A45C]">
                       Alternate Line
                     </div>
-                    <div className="text-base font-serif font-semibold text-thangam-ivory-50 group-hover:text-thangam-gold-300 transition-colors">
+                    <div className="text-base sm:text-lg font-serif font-bold text-[#6E1830] group-hover:text-[#4A1022] transition-colors">
                       {siteConfig.contact.phoneSecondary}
                     </div>
                   </div>
@@ -137,16 +137,16 @@ export const Contact: React.FC<ContactProps> = ({
                         sourceLocation: 'contact_section',
                       })
                     }
-                    className="flex items-center gap-4 p-4 rounded-xl bg-thangam-dark-900/90 border border-white/10 hover:border-thangam-gold-500/40 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-5 rounded-2xl bg-[#FFFDF8] border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 shadow-sm group"
                   >
-                    <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <Mail className="w-5 h-5 text-thangam-ivory-100/70" />
+                    <div className="w-12 h-12 rounded-xl bg-[#6E1830]/10 border border-[#C9A45C]/40 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Mail className="w-5 h-5 text-[#6E1830]" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-semibold uppercase tracking-wider text-thangam-ivory-100/60">
+                      <div className="text-[10px] font-semibold uppercase tracking-widest text-[#C9A45C]">
                         Official Email
                       </div>
-                      <div className="text-sm font-sans font-medium text-thangam-ivory-50 group-hover:text-thangam-gold-300 transition-colors break-all">
+                      <div className="text-sm font-sans font-medium text-[#6E1830] group-hover:text-[#4A1022] transition-colors break-all">
                         {siteConfig.contact.email}
                       </div>
                     </div>
@@ -154,15 +154,15 @@ export const Contact: React.FC<ContactProps> = ({
                 )}
 
                 {/* Physical Workshop & Office Address */}
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-thangam-dark-900/90 border border-white/10">
-                  <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <MapPin className="w-5 h-5 text-thangam-gold-400" />
+                <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#FFFDF8] border border-[#C9A45C]/35 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-[#6E1830] text-[#FFFDF8] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md">
+                    <MapPin className="w-5 h-5 text-[#C9A45C]" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-wider text-thangam-gold-400">
+                    <div className="text-[10px] font-semibold uppercase tracking-widest text-[#C9A45C]">
                       Workshop & Registered Address
                     </div>
-                    <address className="not-italic text-xs sm:text-sm text-thangam-ivory-100/80 leading-relaxed font-sans mt-0.5">
+                    <address className="not-italic text-sm text-[#1F161A]/85 leading-relaxed font-sans mt-0.5">
                       {siteConfig.location.address}
                     </address>
                   </div>
@@ -179,7 +179,7 @@ export const Contact: React.FC<ContactProps> = ({
                   href={whatsAppUrl}
                   target="_blank"
                   leftIcon={<MessageCircle className="w-4 h-4" />}
-                  className="w-full"
+                  className="w-full uppercase tracking-wider text-xs font-semibold"
                   onClick={() =>
                     trackEvent('whatsapp_click', {
                       sourceLocation: 'contact_section',
@@ -194,12 +194,12 @@ export const Contact: React.FC<ContactProps> = ({
 
           {/* Right Column: Interactive Consultation Request Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-thangam-dark-900/90 border border-thangam-gold-500/25 p-6 sm:p-8 lg:p-10 shadow-2xl">
-              <div className="mb-6">
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-thangam-ivory-50 mb-1.5">
+            <div className="rounded-3xl bg-[#FFFDF8] border border-[#C9A45C]/45 p-8 sm:p-10 lg:p-12 shadow-[0_15px_50px_rgba(110,24,48,0.06)]">
+              <div className="mb-8">
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#6E1830] mb-2">
                   Request a Custom Stage Proposal
                 </h3>
-                <p className="text-xs sm:text-sm text-thangam-ivory-100/70 font-sans">
+                <p className="text-sm text-[#1F161A]/75 font-light">
                   Share your event details and preferred decoration style. P.T. Selvam will review your requirements and respond with a personalized proposal.
                 </p>
               </div>

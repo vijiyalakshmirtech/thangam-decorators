@@ -21,9 +21,13 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
+          three: ['three'],
+          gsap: ['gsap'],
+          lenis: ['lenis'],
           icons: ['lucide-react'],
         },
       },
     },
+    chunkSizeWarningLimit: 800,
   },
 });

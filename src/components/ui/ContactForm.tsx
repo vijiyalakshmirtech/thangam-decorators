@@ -126,13 +126,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
 
   if (isSuccess) {
     return (
-      <div className="p-6 sm:p-8 bg-thangam-dark-900 border border-emerald-500/30 rounded-xl text-center">
-        <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-        <h3 className="text-2xl font-serif font-semibold text-thangam-ivory-50 mb-2">
+      <div className="p-8 bg-[#FFFDF8] border border-emerald-500/40 rounded-2xl text-center shadow-md">
+        <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+        <h3 className="text-2xl font-serif font-semibold text-[#6E1830] mb-2">
           Inquiry Received Successfully
         </h3>
-        <p className="text-sm text-thangam-ivory-100/75 max-w-md mx-auto mb-6">
-          Thank you. P.T. Selvam and the Thangam Decorators team will review your event details and contact you shortly.
+        <p className="text-sm text-[#1F161A]/80 max-w-md mx-auto mb-6 font-light">
+          Thank you. P.T. Selvam and the Thangam Decorators team will review your event requirements and contact you shortly.
         </p>
         <Button
           variant="secondary"
@@ -178,7 +178,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
       </div>
 
       {errors.form && (
-        <div className="p-3 rounded-lg bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
+        <div className="p-3 rounded-lg bg-rose-50 border border-rose-300 text-rose-800 text-xs flex items-center gap-2">
           <AlertCircle className="w-4 h-4 flex-shrink-0" />
           <span>{errors.form}</span>
         </div>
@@ -189,9 +189,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
         <div>
           <label
             htmlFor="form-fullName"
-            className="block text-xs font-semibold text-thangam-gold-300 uppercase tracking-wider mb-1.5"
+            className="block text-xs font-semibold text-[#6E1830] uppercase tracking-wider mb-1.5"
           >
-            Your Name <span className="text-rose-400">*</span>
+            Your Name <span className="text-rose-600">*</span>
           </label>
           <input
             id="form-fullName"
@@ -202,12 +202,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             onFocus={handleFocus}
             onChange={handleChange}
             placeholder="e.g. Senthil Kumar"
-            className={`w-full px-4 py-3 rounded-lg bg-thangam-dark-850 border text-sm text-thangam-ivory-50 placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-thangam-gold-400 transition-colors ${
-              errors.fullName ? 'border-rose-500' : 'border-white/10'
+            className={`w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors ${
+              errors.fullName ? 'border-rose-500' : 'border-[#C9A45C]/40'
             }`}
           />
           {errors.fullName && (
-            <p className="mt-1 text-xs text-rose-400">{errors.fullName}</p>
+            <p className="mt-1 text-xs text-rose-600">{errors.fullName}</p>
           )}
         </div>
 
@@ -215,9 +215,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
         <div>
           <label
             htmlFor="form-phone"
-            className="block text-xs font-semibold text-thangam-gold-300 uppercase tracking-wider mb-1.5"
+            className="block text-xs font-semibold text-[#6E1830] uppercase tracking-wider mb-1.5"
           >
-            Mobile Number <span className="text-rose-400">*</span>
+            Mobile Number <span className="text-rose-600">*</span>
           </label>
           <input
             id="form-phone"
@@ -228,11 +228,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             onFocus={handleFocus}
             onChange={handleChange}
             placeholder="e.g. 98426 69882"
-            className={`w-full px-4 py-3 rounded-lg bg-thangam-dark-850 border text-sm text-thangam-ivory-50 placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-thangam-gold-400 transition-colors ${
-              errors.phone ? 'border-rose-500' : 'border-white/10'
+            className={`w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors ${
+              errors.phone ? 'border-rose-500' : 'border-[#C9A45C]/40'
             }`}
           />
-          {errors.phone && <p className="mt-1 text-xs text-rose-400">{errors.phone}</p>}
+          {errors.phone && <p className="mt-1 text-xs text-rose-600">{errors.phone}</p>}
         </div>
       </div>
 
@@ -241,9 +241,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
         <div>
           <label
             htmlFor="form-eventType"
-            className="block text-xs font-semibold text-thangam-gold-300 uppercase tracking-wider mb-1.5"
+            className="block text-xs font-semibold text-[#6E1830] uppercase tracking-wider mb-1.5"
           >
-            Event Type <span className="text-rose-400">*</span>
+            Event Type <span className="text-rose-600">*</span>
           </label>
           <select
             id="form-eventType"
@@ -251,7 +251,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             value={formData.eventType}
             onFocus={handleFocus}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-thangam-dark-850 border border-white/10 text-sm text-thangam-ivory-50 focus:outline-none focus:ring-2 focus:ring-thangam-gold-400 transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#C9A45C]/40 text-sm text-[#1F161A] focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors"
           >
             <option value="Wedding & Muhurtham">Traditional Wedding & Muhurtham</option>
             <option value="Grand Reception">Grand Evening Reception</option>
@@ -266,9 +266,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
         <div>
           <label
             htmlFor="form-eventDate"
-            className="block text-xs font-semibold text-thangam-gold-300 uppercase tracking-wider mb-1.5"
+            className="block text-xs font-semibold text-[#6E1830] uppercase tracking-wider mb-1.5"
           >
-            Event Date <span className="text-rose-400">*</span>
+            Event Date <span className="text-rose-600">*</span>
           </label>
           <input
             id="form-eventDate"
@@ -278,12 +278,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             value={formData.eventDate}
             onFocus={handleFocus}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-lg bg-thangam-dark-850 border text-sm text-thangam-ivory-50 focus:outline-none focus:ring-2 focus:ring-thangam-gold-400 transition-colors ${
-              errors.eventDate ? 'border-rose-500' : 'border-white/10'
+            className={`w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border text-sm text-[#1F161A] focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors ${
+              errors.eventDate ? 'border-rose-500' : 'border-[#C9A45C]/40'
             }`}
           />
           {errors.eventDate && (
-            <p className="mt-1 text-xs text-rose-400">{errors.eventDate}</p>
+            <p className="mt-1 text-xs text-rose-600">{errors.eventDate}</p>
           )}
         </div>
       </div>
@@ -292,7 +292,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
       <div>
         <label
           htmlFor="form-venueLocation"
-          className="block text-xs font-semibold text-thangam-gold-300 uppercase tracking-wider mb-1.5"
+          className="block text-xs font-semibold text-[#6E1830] uppercase tracking-wider mb-1.5"
         >
           Mandapam / Venue Name & Location
         </label>
@@ -304,7 +304,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
           onFocus={handleFocus}
           onChange={handleChange}
           placeholder="e.g. Kalyana Mandapam, Perundurai Road, Erode"
-          className="w-full px-4 py-3 rounded-lg bg-thangam-dark-850 border border-white/10 text-sm text-thangam-ivory-50 placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-thangam-gold-400 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#C9A45C]/40 text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors"
         />
       </div>
 
@@ -312,7 +312,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
       <div>
         <label
           htmlFor="form-message"
-          className="block text-xs font-semibold text-thangam-gold-300 uppercase tracking-wider mb-1.5"
+          className="block text-xs font-semibold text-[#6E1830] uppercase tracking-wider mb-1.5"
         >
           Specific Stage Requirements / Notes
         </label>
@@ -324,7 +324,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
           onFocus={handleFocus}
           onChange={handleChange}
           placeholder="e.g. Looking for a traditional temple theme mandapam with fresh lotus and jasmine florals."
-          className="w-full px-4 py-3 rounded-lg bg-thangam-dark-850 border border-white/10 text-sm text-thangam-ivory-50 placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-thangam-gold-400 transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#C9A45C]/40 text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors resize-none"
         />
       </div>
 
@@ -334,13 +334,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
         variant="primary"
         size="lg"
         isLoading={isSubmitting}
-        className="w-full"
-        rightIcon={<Send className="w-4 h-4" />}
+        className="w-full uppercase tracking-wider text-xs font-bold"
+        rightIcon={<Send className="w-4 h-4 text-[#C9A45C]" />}
       >
         Request Free Stage Consultation
       </Button>
 
-      <p className="text-[11px] text-center text-thangam-ivory-100/50 mt-2">
+      <p className="text-[11px] text-center text-[#1F161A]/60 mt-2 font-light">
         Direct consultation with P.T. Selvam. We respect your privacy and never share your details.
       </p>
     </form>

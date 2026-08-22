@@ -8,50 +8,54 @@ export default {
     extend: {
       colors: {
         thangam: {
+          burgundy: {
+            DEFAULT: '#6E1830', // Primary Burgundy
+            50: '#FDF2F4',
+            100: '#FBE4E8',
+            200: '#F8CBD3',
+            300: '#F2A3B1',
+            400: '#E66F85',
+            500: '#D4405E',
+            600: '#B82645',
+            700: '#951B34',
+            800: '#6E1830', // Primary Brand Burgundy
+            900: '#4A1022', // Deep Wine
+            950: '#300713', // Ultra Deep Wine
+          },
+          wine: '#4A1022',
+          cream: {
+            DEFAULT: '#F7F0E4', // Warm Cream (60% dominant canvas)
+            50: '#FFFDF8',      // Soft Ivory
+            100: '#FAF5EC',
+            200: '#F7F0E4',     // Warm Cream
+            300: '#EFE7D8',     // Muted Sand
+            400: '#E2D5BE',
+            500: '#D0BF9F',
+          },
+          ivory: '#FFFDF8',
           gold: {
-            50: '#FAF7E8',
-            100: '#F4EBC4',
-            200: '#EDE0A0',
-            300: '#E6CE78',
-            400: '#DFC158',
-            500: '#D4AF37', // Primary Brand Gold
-            600: '#B89020',
-            700: '#967215',
-            800: '#7A5D0E',
-            900: '#5C4407',
+            DEFAULT: '#C9A45C', // Champagne Gold
+            50: '#FAF6ED',
+            100: '#F4ECD8',
+            200: '#E9D7B0',
+            300: '#DEC288',
+            400: '#D4B36F',
+            500: '#C9A45C',     // Primary Champagne Gold
+            600: '#B58D44',
+            700: '#967132',
+            800: '#7B5C2B',
+            900: '#654B24',
           },
-          dark: {
-            950: '#0A0C0E', // Deepest background
-            900: '#12151A', // Card surface
-            850: '#161A22', // Hover surface
-            800: '#1B2028', // Elevated border
-            700: '#2C3442',
-            600: '#424D60',
-          },
-          maroon: {
-            600: '#982534',
-            700: '#7A1C28', // Heritage Temple Maroon
-            800: '#560F18',
-            900: '#3B0A10',
-          },
-          ivory: {
-            50: '#FDFBF7',
-            100: '#F7F3EB',
-            200: '#EFE7D8',
-            300: '#E0D2BA',
-          },
-          emerald: {
-            500: '#238A64',
-            600: '#1B6E50',
-            700: '#134E39', // Foliage Emerald
-            800: '#0E3829',
-          },
+          rose: '#B88A78',      // Muted Rose Gold
+          charcoal: '#1F161A',  // Velvet Rich Charcoal
+          darkText: '#2C1820',
           whatsapp: '#25D366',
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Playfair Display', '"Noto Serif Tamil"', 'Georgia', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', '"Mukta Malar"', 'system-ui', '-apple-system', 'sans-serif'],
+        tamil: ['"Noto Serif Tamil"', '"Mukta Malar"', 'serif'],
       },
       boxShadow: {
         'gold-sm': '0 0 10px rgba(212, 175, 55, 0.15)',

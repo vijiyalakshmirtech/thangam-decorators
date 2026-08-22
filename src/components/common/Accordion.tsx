@@ -44,7 +44,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         return (
           <div
             key={item.id}
-            className="border border-thangam-gold-500/20 rounded-xl bg-thangam-dark-900/80 overflow-hidden transition-colors hover:border-thangam-gold-500/40"
+            className="border border-[#C9A45C]/35 rounded-2xl bg-[#FFFDF8] overflow-hidden transition-all duration-300 hover:border-[#6E1830] shadow-[0_4px_20px_rgba(110,24,48,0.03)]"
           >
             <h3>
               <button
@@ -53,12 +53,12 @@ export const Accordion: React.FC<AccordionProps> = ({
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => toggleItem(item.id)}
-                className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-serif font-medium text-base sm:text-lg text-thangam-ivory-50 hover:text-thangam-gold-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-thangam-gold-400 min-h-[52px]"
+                className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-serif font-semibold text-lg sm:text-xl text-[#6E1830] hover:text-[#4A1022] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C] min-h-[56px]"
               >
                 <span className="pr-4">{item.title}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-thangam-gold-400 flex-shrink-0 transition-transform duration-300 ${
-                    isOpen ? 'rotate-180' : ''
+                  className={`w-5 h-5 text-[#C9A45C] flex-shrink-0 transition-transform duration-300 ${
+                    isOpen ? 'rotate-180 text-[#6E1830]' : ''
                   }`}
                   aria-hidden="true"
                 />
@@ -70,11 +70,11 @@ export const Accordion: React.FC<AccordionProps> = ({
               role="region"
               aria-labelledby={headerId}
               hidden={!isOpen}
-              className={`px-4 pb-5 sm:px-5 text-sm sm:text-base text-thangam-ivory-100/75 leading-relaxed transition-all duration-300 ${
+              className={`px-5 pb-6 sm:px-6 text-sm sm:text-base text-[#1F161A]/80 leading-relaxed font-light transition-all duration-300 ${
                 isOpen ? 'block' : 'hidden'
               }`}
             >
-              <div className="pt-2 border-t border-white/5">{item.content}</div>
+              <div className="pt-3 border-t border-[#C9A45C]/20">{item.content}</div>
             </div>
           </div>
         );

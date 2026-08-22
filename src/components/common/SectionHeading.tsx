@@ -32,24 +32,24 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         </div>
       )}
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-thangam-ivory-50 tracking-tight leading-tight">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-[#6E1830] tracking-tight leading-tight">
         {title}
       </h2>
 
       {subtitle && (
-        <p className="mt-2 text-base sm:text-lg font-medium text-thangam-gold-300/90 font-serif italic">
+        <p className="mt-2 text-base sm:text-xl font-serif italic text-[#C9A45C] tracking-wide">
           {subtitle}
         </p>
       )}
 
       {description && (
-        <p className="mt-4 text-sm sm:text-base text-thangam-ivory-100/70 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-sm sm:text-base text-[#1F161A]/80 leading-relaxed max-w-2xl mx-auto font-light">
           {description}
         </p>
       )}
 
       <div
-        className={`mt-4 h-0.5 w-16 bg-gradient-to-r from-thangam-gold-400 to-thangam-gold-600 rounded-full ${
+        className={`mt-5 h-[1.5px] w-20 bg-gradient-to-r from-[#C9A45C] via-[#E0C078] to-[#9E7B35] ${
           isCenter ? 'mx-auto' : ''
         }`}
         aria-hidden="true"

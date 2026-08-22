@@ -3,75 +3,142 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Core */
-  --thangam-gold-50:  #FAF7E8;
-  --thangam-gold-100: #F4EBC4;
-  --thangam-gold-300: #E6CE78;
-  --thangam-gold-500: #D4AF37;
-  --thangam-gold-600: #B89020;
-  --thangam-gold-800: #7A5D0E;
+  /* Brand Core - 60% Cream / 25% Burgundy / 10% Champagne Gold / 5% Supporting */
+  --thangam-cream: #F7F0E4;
+  --thangam-ivory: #FFFDF8;
+  --thangam-sand: #EFE7D8;
 
-  /* Deep Backgrounds */
-  --thangam-dark-950: #0A0C0E;
-  --thangam-dark-900: #12151A;
-  --thangam-dark-850: #161A22;
-  --thangam-dark-800: #1B2028;
-  --thangam-dark-700: #2C3442;
+  --thangam-burgundy: #6E1830;
+  --thangam-wine: #4A1022;
+  --thangam-wine-deep: #300713;
 
-  /* Accents */
-  --thangam-maroon-700: #7A1C28;
-  --thangam-emerald-700: #134E39;
-  --thangam-ivory-50: #FDFBF7;
+  --thangam-gold: #C9A45C;
+  --thangam-gold-light: #E0C078;
+  --thangam-gold-dark: #9E7B35;
+  --thangam-rose: #B88A78;
+
+  --thangam-charcoal: #1F161A;
+  --thangam-dark-text: #2C1820;
 
   /* Motion Standards */
   --ease-royal: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-hover: 200ms;
+  --ease-cinematic: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-hover: 300ms;
 }
 
 @layer base {
   html {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    color-scheme: dark;
+    font-family: 'Plus Jakarta Sans', 'Mukta Malar', system-ui, -apple-system, sans-serif;
+    background-color: var(--thangam-cream);
+    color: var(--thangam-charcoal);
   }
 
   body {
-    background-color: var(--thangam-dark-950);
-    color: var(--thangam-ivory-50);
+    background-color: var(--thangam-cream);
+    color: var(--thangam-charcoal);
     min-height: 100vh;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, .font-serif {
-    font-family: 'Cormorant Garamond', Playfair Display, Georgia, serif;
+    font-family: 'Cormorant Garamond', 'Noto Serif Tamil', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-tamil {
+    font-family: 'Noto Serif Tamil', 'Mukta Malar', serif;
   }
 
   /* Accessible focus indicators */
   :focus-visible {
-    outline: 2px solid var(--thangam-gold-500);
+    outline: 2px solid var(--thangam-gold);
     outline-offset: 2px;
   }
 }
 
+/* Lenis Smooth Scrolling */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F0E4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A45C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6E1830;
+}
+
 @layer components {
-  /* Subtle golden border and ambient surface */
-  .gold-border {
-    border: 1px solid rgba(212, 175, 55, 0.2);
+  /* Subtle gold hairline borders */
+  .gold-hairline {
+    border: 1px solid rgba(201, 164, 92, 0.35);
+  }
+
+  .gold-hairline-subtle {
+    border: 1px solid rgba(201, 164, 92, 0.2);
   }
 
   .gold-border-hover {
-    transition: border-color var(--duration-hover) ease, box-shadow var(--duration-hover) ease;
+    transition: border-color var(--duration-hover) ease, box-shadow var(--duration-hover) ease, transform var(--duration-hover) ease;
   }
 
   .gold-border-hover:hover {
-    border-color: rgba(212, 175, 55, 0.45);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.12);
+    border-color: rgba(201, 164, 92, 0.8);
+    box-shadow: 0 10px 30px rgba(110, 24, 48, 0.08);
   }
 
-  /* Ambient card gradient */
-  .luxury-card {
-    background: linear-gradient(180deg, rgba(22, 26, 34, 0.85) 0%, rgba(18, 21, 26, 0.95) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: 12px;
+  /* Luxury Cream Card Surface */
+  .luxury-cream-card {
+    background: #FFFDF8;
+    border: 1px solid rgba(201, 164, 92, 0.3);
+    box-shadow: 0 4px 24px rgba(74, 16, 34, 0.04);
+  }
+
+  /* Luxury Wine Statement Surface */
+  .luxury-wine-card {
+    background: linear-gradient(145deg, #6E1830 0%, #4A1022 100%);
+    border: 1px solid rgba(201, 164, 92, 0.4);
+    box-shadow: 0 12px 40px rgba(48, 7, 19, 0.25);
+  }
+
+  /* Editorial Gold Text Gradient */
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #C9A45C 0%, #E0C078 50%, #9E7B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .burgundy-gradient-text {
+    background: linear-gradient(135deg, #6E1830 0%, #4A1022 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
