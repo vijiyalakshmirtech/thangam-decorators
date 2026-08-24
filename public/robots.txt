@@ -1,6 +1,5 @@
 # robots.txt for Thangam Decorators
-# Note: Sitemap URL will be configured upon production domain confirmation
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://thangam-decorators.vercel.app/sitemap.xml
