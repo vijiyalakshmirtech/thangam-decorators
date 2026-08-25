@@ -33,12 +33,12 @@ export const Faqs: React.FC<FaqsProps> = ({
   return (
     <section
       id={id}
-      className={`py-24 sm:py-32 bg-[#FFFDF8] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
+      className={`py-24 sm:py-32 bg-gradient-to-b from-[#4A0E1B] via-[#5A1426] to-[#4A0E1B] text-[#FFF8ED] relative overflow-hidden border-t border-white/10 ${className}`}
       aria-labelledby="faqs-heading"
     >
       {/* Ambient background lighting */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#C9A45C]/8 blur-[130px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#8B3A4E]/15 blur-[130px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
@@ -49,12 +49,13 @@ export const Faqs: React.FC<FaqsProps> = ({
           title="FREQUENTLY ASKED QUESTIONS."
           subtitle="மேடை அலங்கார ஆலோசனைகள் மற்றும் விளக்கங்கள்"
           description="Have questions about planning your wedding stage decor in Erode or Western Tamil Nadu? Here are clear, factual answers regarding our booking process, custom sets, and floral sourcing."
+          theme="dark"
           className="mb-12 sm:mb-16"
         />
 
         {/* Accessible Accordion or EmptyState */}
         {FAQS_DATA.length > 0 ? (
-          <Accordion items={accordionItems} allowMultiple={false} className="mb-14" />
+          <Accordion items={accordionItems} allowMultiple={false} theme="dark" className="mb-14" />
         ) : (
           <div className="mb-14">
             <EmptyState
@@ -67,12 +68,12 @@ export const Faqs: React.FC<FaqsProps> = ({
         )}
 
         {/* Bottom Conversion & Inquiry Prompt */}
-        <div className="rounded-3xl bg-[#F7F0E4] border border-[#C9A45C]/40 p-8 sm:p-10 text-center shadow-[0_10px_35px_rgba(110,24,48,0.04)]">
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#6E1830] mb-2">
+        <div className="rounded-3xl bg-[#5A1426] border border-white/15 p-8 sm:p-10 text-center shadow-[0_10px_35px_rgba(74,14,27,0.4)]">
+          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#FFF8ED] mb-2">
             Have a Specific Stage or Hall Question?
           </h3>
-          <p className="text-sm sm:text-base text-[#1F161A]/80 max-w-lg mx-auto mb-8 font-light">
-            Speak directly with <strong className="text-[#6E1830] font-semibold">{siteConfig.brand.ownerName}</strong> to discuss your mandapam dimensions, floral preferences, and custom scenography.
+          <p className="text-sm sm:text-base text-[#F7F0E4]/85 max-w-lg mx-auto mb-8 font-light">
+            Speak directly with <strong className="text-[#FFF8ED] font-semibold">{siteConfig.brand.ownerName}</strong> to discuss your mandapam dimensions, floral preferences, and custom scenography.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
@@ -98,7 +99,7 @@ export const Faqs: React.FC<FaqsProps> = ({
               variant="primary"
               size="md"
               href="#showroom"
-              leftIcon={<Sparkles className="w-4 h-4 text-[#C9A45C]" />}
+              leftIcon={<Sparkles className="w-4 h-4 text-[#4A0E1B]" />}
               className="text-xs uppercase tracking-wider font-semibold"
               onClick={() =>
                 trackEvent('cta_click', {

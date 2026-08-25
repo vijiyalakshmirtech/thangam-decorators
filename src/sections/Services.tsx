@@ -22,10 +22,10 @@ export interface ServicesProps {
 }
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
-  'wedding-mandapams': <Landmark className="w-6 h-6 text-thangam-gold-400" />,
-  'reception-stages': <Sparkles className="w-6 h-6 text-thangam-gold-400" />,
-  'pre-wedding-ceremonies': <Heart className="w-6 h-6 text-thangam-gold-400" />,
-  'temple-cultural-events': <Flower2 className="w-6 h-6 text-thangam-gold-400" />,
+  'wedding-mandapams': <Landmark className="w-6 h-6 text-[#6E1830]" />,
+  'reception-stages': <Sparkles className="w-6 h-6 text-[#6E1830]" />,
+  'pre-wedding-ceremonies': <Heart className="w-6 h-6 text-[#6E1830]" />,
+  'temple-cultural-events': <Flower2 className="w-6 h-6 text-[#6E1830]" />,
 };
 
 export const Services: React.FC<ServicesProps> = ({
@@ -35,12 +35,12 @@ export const Services: React.FC<ServicesProps> = ({
   return (
     <section
       id={id}
-      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
+      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#6E1830]/15 ${className}`}
       aria-labelledby="services-heading"
     >
       {/* Subtle ambient lighting backdrop */}
       <div
-        className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-[#C9A45C]/8 blur-[140px] rounded-full pointer-events-none"
+        className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-[#8B3A4E]/5 blur-[140px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
@@ -51,6 +51,7 @@ export const Services: React.FC<ServicesProps> = ({
           title="BESPOKE SCENOGRAPHY SERVICES."
           subtitle="பாரம்பரிய நேர்த்தியும் நவீன கம்பீரமும் இணைந்த சேவைகள்"
           description="From auspicious Vedic muhurtham mandapams in temple halls to high-glamour evening reception backdrops, P.T. Selvam and his team deliver complete on-site decor execution across Erode and Western Tamil Nadu."
+          theme="light"
           className="mb-12 sm:mb-16"
         />
 
@@ -61,19 +62,19 @@ export const Services: React.FC<ServicesProps> = ({
               `Hello P.T. Selvam, I would like to inquire about "${service.titleEnglish}" decoration for our upcoming event.`
             );
             const icon = SERVICE_ICONS[service.id] || (
-              <Sparkles className="w-6 h-6 text-[#C9A45C]" />
+              <Sparkles className="w-6 h-6 text-[#6E1830]" />
             );
 
             return (
               <article
                 key={service.id}
-                className="group rounded-2xl bg-[#FFFDF8] border border-[#C9A45C]/35 hover:border-[#6E1830] p-6 sm:p-9 flex flex-col justify-between transition-all duration-500 shadow-[0_6px_25px_rgba(110,24,48,0.04)] hover:shadow-[0_15px_40px_rgba(110,24,48,0.1)]"
+                className="group rounded-2xl bg-[#FFF8ED] border border-[#6E1830]/15 hover:border-[#6E1830] p-6 sm:p-9 flex flex-col justify-between transition-all duration-500 shadow-[0_6px_25px_rgba(74,14,27,0.04)] hover:shadow-[0_15px_40px_rgba(74,14,27,0.1)]"
                 aria-labelledby={`service-title-${service.id}`}
               >
                 <div>
                   {/* Top Card Header: Icon & Category Tag */}
                   <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-[#6E1830]/10 border border-[#C9A45C]/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-[#6E1830]/10 border border-[#6E1830]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       {icon}
                     </div>
 
@@ -83,14 +84,14 @@ export const Services: React.FC<ServicesProps> = ({
                   {/* English Service Title */}
                   <h3
                     id={`service-title-${service.id}`}
-                    className="text-2xl sm:text-3xl font-serif font-bold text-[#6E1830] group-hover:text-[#4A1022] transition-colors leading-snug mb-1"
+                    className="text-2xl sm:text-3xl font-serif font-bold text-[#6E1830] group-hover:text-[#4A0E1B] transition-colors leading-snug mb-1"
                   >
                     {service.titleEnglish}
                   </h3>
 
                   {/* Tamil Service Subtitle */}
                   {service.titleTamil && (
-                    <p className="font-tamil text-sm font-semibold text-[#C9A45C] mb-3">
+                    <p className="font-tamil text-sm font-semibold text-[#6E1830]/80 mb-3">
                       {service.titleTamil}
                     </p>
                   )}
@@ -101,14 +102,14 @@ export const Services: React.FC<ServicesProps> = ({
                   </p>
 
                   {/* Features Checklist */}
-                  <div className="mb-6 pt-5 border-t border-[#C9A45C]/20">
+                  <div className="mb-6 pt-5 border-t border-[#6E1830]/15">
                     <h4 className="text-[11px] font-semibold uppercase tracking-widest text-[#6E1830] mb-3">
                       Key Execution Highlights
                     </h4>
                     <ul className="space-y-2.5">
                       {service.features.map((feature, fIdx) => (
                         <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1F161A]/85 font-light">
-                          <CheckCircle2 className="w-4 h-4 text-[#C9A45C] flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-[#6E1830] flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -117,7 +118,7 @@ export const Services: React.FC<ServicesProps> = ({
                 </div>
 
                 {/* Card Action Row */}
-                <div className="pt-5 border-t border-[#C9A45C]/25 flex flex-wrap items-center justify-between gap-3">
+                <div className="pt-5 border-t border-[#6E1830]/15 flex flex-wrap items-center justify-between gap-3">
                   <Button
                     variant="secondary"
                     size="sm"

@@ -7,6 +7,7 @@ export interface SectionHeadingProps {
   subtitle?: string;
   description?: string;
   align?: 'left' | 'center';
+  theme?: 'light' | 'dark'; // 'light' for cream sections, 'dark' for burgundy sections
   className?: string;
 }
 
@@ -16,9 +17,11 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   subtitle,
   description,
   align = 'center',
+  theme = 'light',
   className = '',
 }) => {
   const isCenter = align === 'center';
+  const isDark = theme === 'dark';
 
   return (
     <div
@@ -28,28 +31,40 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     >
       {eyebrow && (
         <div className={`mb-3 ${isCenter ? 'flex justify-center' : ''}`}>
-          <Badge variant="gold">{eyebrow}</Badge>
+          <Badge variant={isDark ? 'dark' : 'gold'}>{eyebrow}</Badge>
         </div>
       )}
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-[#6E1830] tracking-tight leading-tight">
+      <h2
+        className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-tight ${
+          isDark ? 'text-[#FFF8ED]' : 'text-[#6E1830]'
+        }`}
+      >
         {title}
       </h2>
 
       {subtitle && (
-        <p className="mt-2 text-base sm:text-xl font-serif italic text-[#C9A45C] tracking-wide">
+        <p
+          className={`mt-2 text-base sm:text-xl font-serif italic tracking-wide ${
+            isDark ? 'text-[#FFF8ED]/90' : 'text-[#6E1830]/80'
+          }`}
+        >
           {subtitle}
         </p>
       )}
 
       {description && (
-        <p className="mt-4 text-sm sm:text-base text-[#1F161A]/80 leading-relaxed max-w-2xl mx-auto font-light">
+        <p
+          className={`mt-4 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-light ${
+            isDark ? 'text-[#F7F0E4]/85' : 'text-[#1F161A]/80'
+          }`}
+        >
           {description}
         </p>
       )}
 
       <div
-        className={`mt-5 h-[1.5px] w-20 bg-gradient-to-r from-[#C9A45C] via-[#E0C078] to-[#9E7B35] ${
+        className={`mt-5 h-[1.5px] w-20 ${isDark ? 'bg-white/20' : 'bg-[#6E1830]/20'} ${
           isCenter ? 'mx-auto' : ''
         }`}
         aria-hidden="true"

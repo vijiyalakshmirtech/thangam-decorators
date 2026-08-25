@@ -47,28 +47,28 @@ export const Footer: React.FC = () => {
 
   return (
     <footer
-      className="bg-[#300713] border-t border-[#C9A45C]/35 pt-20 pb-28 sm:pb-20 text-[#F7F0E4]/80 text-sm relative overflow-hidden"
+      className="bg-[#4A0E1B] border-t border-white/15 pt-20 pb-28 sm:pb-20 text-[#F7F0E4]/80 text-sm relative overflow-hidden"
       aria-label="Site Footer"
     >
       {/* Background Subtle Gradient */}
       <div
-        className="absolute top-0 right-0 w-[500px] h-[300px] bg-[#6E1830]/40 blur-[130px] rounded-full pointer-events-none"
+        className="absolute top-0 right-0 w-[500px] h-[300px] bg-[#6E1830]/30 blur-[130px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
       <Container size="wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-[#C9A45C]/25">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-white/10">
           {/* Column 1: Brand & Founder Identity (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#C9A45C]/50 bg-[#4A1022] flex items-center justify-center flex-shrink-0 shadow-md">
-                <Sparkles className="w-5 h-5 text-[#C9A45C]" />
+              <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/20 bg-[#5A1426] flex items-center justify-center flex-shrink-0 shadow-md">
+                <Sparkles className="w-5 h-5 text-[#FFF8ED]" />
               </div>
               <div>
-                <span className="block font-serif text-2xl font-bold text-[#FFFDF8] tracking-tight">
+                <span className="block font-serif text-2xl font-bold text-[#FFF8ED] tracking-tight">
                   {siteConfig.brand.name}
                 </span>
-                <span className="block font-tamil text-xs text-[#C9A45C] font-semibold mt-0.5">
+                <span className="block font-tamil text-xs text-[#FFF8ED]/90 font-semibold mt-0.5">
                   தங்கம் டெக்கரேட்டர்ஸ் • ஈரோடு
                 </span>
               </div>
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
               {siteConfig.site.description}
             </p>
 
-            <p className="text-xs font-serif italic text-[#C9A45C]">
+            <p className="text-xs font-serif italic text-[#FFF8ED]/90">
               "{siteConfig.brand.tagline}"
             </p>
 
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Thangam Decorators on Instagram"
-                  className="w-10 h-10 rounded-full bg-[#4A1022] border border-[#C9A45C]/35 flex items-center justify-center text-[#FFFDF8] hover:text-[#C9A45C] hover:border-[#C9A45C] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
+                  className="w-10 h-10 rounded-full bg-[#5A1426] border border-white/20 flex items-center justify-center text-[#FFF8ED] hover:text-white hover:border-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Thangam Decorators on Facebook"
-                  className="w-10 h-10 rounded-full bg-[#4A1022] border border-[#C9A45C]/35 flex items-center justify-center text-[#FFFDF8] hover:text-[#C9A45C] hover:border-[#C9A45C] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
+                  className="w-10 h-10 rounded-full bg-[#5A1426] border border-white/20 flex items-center justify-center text-[#FFF8ED] hover:text-white hover:border-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Thangam Decorators on YouTube"
-                  className="w-10 h-10 rounded-full bg-[#4A1022] border border-[#C9A45C]/35 flex items-center justify-center text-[#FFFDF8] hover:text-[#C9A45C] hover:border-[#C9A45C] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
+                  className="w-10 h-10 rounded-full bg-[#5A1426] border border-white/20 flex items-center justify-center text-[#FFF8ED] hover:text-white hover:border-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <Youtube className="w-4 h-4" />
                 </a>
@@ -124,7 +124,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Section Navigation (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="font-serif text-sm font-bold text-[#C9A45C] uppercase tracking-widest mb-4">
+            <h4 className="font-serif text-sm font-bold text-[#FFF8ED] uppercase tracking-widest mb-4">
               Navigation
             </h4>
             <nav aria-label="Footer Navigation">
@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
                   <li key={idx}>
                     <a
                       href={link.href}
-                      className="text-[#F7F0E4]/70 hover:text-[#FFFDF8] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C9A45C] rounded"
+                      className="text-[#F7F0E4]/70 hover:text-[#FFF8ED] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white rounded"
                     >
                       {link.label}
                     </a>
@@ -145,7 +145,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Decor Offerings (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-serif text-sm font-bold text-[#C9A45C] uppercase tracking-widest mb-4">
+            <h4 className="font-serif text-sm font-bold text-[#FFF8ED] uppercase tracking-widest mb-4">
               Stage Specialties
             </h4>
             <ul className="space-y-2.5 text-xs font-sans font-light">
@@ -153,7 +153,7 @@ export const Footer: React.FC = () => {
                 <li key={service.id}>
                   <a
                     href="#showroom"
-                    className="text-[#F7F0E4]/70 hover:text-[#FFFDF8] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C9A45C] rounded block"
+                    className="text-[#F7F0E4]/70 hover:text-[#FFF8ED] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white rounded block"
                   >
                     {service.titleEnglish}
                   </a>
@@ -164,7 +164,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Verified Contact & Workshop Location (3 cols) */}
           <div className="lg:col-span-3 space-y-3.5">
-            <h4 className="font-serif text-sm font-bold text-[#C9A45C] uppercase tracking-widest mb-4">
+            <h4 className="font-serif text-sm font-bold text-[#FFF8ED] uppercase tracking-widest mb-4">
               Direct Contact
             </h4>
             <ul className="space-y-3 text-xs font-sans">
@@ -173,11 +173,11 @@ export const Footer: React.FC = () => {
                 <a
                   href={primaryTelUrl}
                   onClick={() => trackEvent('phone_click', { sourceLocation: 'footer', phoneType: 'primary' })}
-                  className="flex items-start gap-2.5 text-[#F7F0E4]/80 hover:text-[#FFFDF8] transition-colors group"
+                  className="flex items-start gap-2.5 text-[#F7F0E4]/80 hover:text-[#FFF8ED] transition-colors group"
                 >
-                  <Phone className="w-4 h-4 text-[#C9A45C] flex-shrink-0 mt-0.5" />
+                  <Phone className="w-4 h-4 text-[#FFF8ED] flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="block font-semibold text-[#FFFDF8] group-hover:text-[#C9A45C]">
+                    <span className="block font-semibold text-[#FFF8ED] group-hover:text-white">
                       {siteConfig.contact.phonePrimary}
                     </span>
                     <span className="text-[10px] text-[#F7F0E4]/60">
@@ -192,11 +192,11 @@ export const Footer: React.FC = () => {
                 <a
                   href={secondaryTelUrl}
                   onClick={() => trackEvent('phone_click', { sourceLocation: 'footer', phoneType: 'secondary' })}
-                  className="flex items-start gap-2.5 text-[#F7F0E4]/80 hover:text-[#FFFDF8] transition-colors group"
+                  className="flex items-start gap-2.5 text-[#F7F0E4]/80 hover:text-[#FFF8ED] transition-colors group"
                 >
-                  <Phone className="w-4 h-4 text-[#C9A45C]/80 flex-shrink-0 mt-0.5" />
+                  <Phone className="w-4 h-4 text-[#FFF8ED]/80 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="block font-semibold text-[#FFFDF8] group-hover:text-[#C9A45C]">
+                    <span className="block font-semibold text-[#FFF8ED] group-hover:text-white">
                       {siteConfig.contact.phoneSecondary}
                     </span>
                     <span className="text-[10px] text-[#F7F0E4]/60">
@@ -228,9 +228,9 @@ export const Footer: React.FC = () => {
                   <a
                     href={mailtoUrl}
                     onClick={() => trackEvent('email_click', { sourceLocation: 'footer' })}
-                    className="flex items-start gap-2.5 text-[#F7F0E4]/80 hover:text-[#FFFDF8] transition-colors"
+                    className="flex items-start gap-2.5 text-[#F7F0E4]/80 hover:text-[#FFF8ED] transition-colors"
                   >
-                    <Mail className="w-4 h-4 text-[#C9A45C] flex-shrink-0 mt-0.5" />
+                    <Mail className="w-4 h-4 text-[#FFF8ED] flex-shrink-0 mt-0.5" />
                     <span className="break-all">{siteConfig.contact.email}</span>
                   </a>
                 </li>
@@ -242,9 +242,9 @@ export const Footer: React.FC = () => {
                   href={mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2.5 text-[#F7F0E4]/70 hover:text-[#FFFDF8] transition-colors group"
+                  className="flex items-start gap-2.5 text-[#F7F0E4]/70 hover:text-[#FFF8ED] transition-colors group"
                 >
-                  <MapPin className="w-4 h-4 text-[#C9A45C] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#FFF8ED] flex-shrink-0 mt-0.5" />
                   <address className="not-italic leading-relaxed font-light">
                     {siteConfig.location.address}, {siteConfig.location.city} – {siteConfig.location.postalCode}
                   </address>
@@ -264,7 +264,7 @@ export const Footer: React.FC = () => {
             type="button"
             onClick={scrollToTop}
             aria-label="Scroll back to top of page"
-            className="flex items-center gap-1.5 text-[#C9A45C] hover:text-[#FFFDF8] transition-colors p-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#C9A45C] rounded"
+            className="flex items-center gap-1.5 text-[#FFF8ED] hover:text-white transition-colors p-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white rounded"
           >
             <span className="text-xs uppercase tracking-widest font-semibold">Back to Top</span>
             <ArrowUp className="w-3.5 h-3.5" />

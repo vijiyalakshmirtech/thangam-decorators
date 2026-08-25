@@ -35,17 +35,17 @@ export const ImageWrapper: React.FC<ImageWrapperProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden bg-thangam-dark-900 ${
+      className={`relative overflow-hidden bg-[#5A1426] ${
         aspectRatioClasses[aspectRatio] || ''
       } ${containerClassName}`}
     >
       {/* Loading Skeleton */}
       {!isLoaded && !hasError && (
         <div
-          className="absolute inset-0 bg-thangam-dark-850 animate-pulse flex items-center justify-center"
+          className="absolute inset-0 bg-[#4A0E1B] animate-pulse flex items-center justify-center"
           aria-hidden="true"
         >
-          <div className="w-8 h-8 rounded-full border-2 border-thangam-gold-500/20 border-t-thangam-gold-500 animate-spin" />
+          <div className="w-8 h-8 rounded-full border-2 border-white/20 border-t-white animate-spin" />
         </div>
       )}
 
@@ -69,7 +69,7 @@ export const ImageWrapper: React.FC<ImageWrapperProps> = ({
 
       {/* Fallback Badge if fallback is active */}
       {hasError && (
-        <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/70 rounded text-[10px] text-thangam-gold-300 backdrop-blur-sm">
+        <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/70 rounded text-[10px] text-[#FFF8ED] backdrop-blur-sm">
           Preview Image
         </div>
       )}

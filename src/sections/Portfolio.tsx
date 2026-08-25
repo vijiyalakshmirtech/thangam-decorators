@@ -97,12 +97,12 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
   return (
     <section
       id={id}
-      className={`py-24 sm:py-32 bg-[#FFFDF8] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
+      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#6E1830]/15 ${className}`}
       aria-labelledby="portfolio-heading"
     >
       {/* Background ambient lighting */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C9A45C]/8 blur-[130px] rounded-full pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#8B3A4E]/5 blur-[130px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
@@ -113,6 +113,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
           title="MASTER STAGE SCENOGRAPHY."
           subtitle="கலைநயம் மிக்க திருமண மற்றும் வரவேற்பு மேடை காட்சியகம்"
           description="Explore our authentic stage decorations featuring traditional temple gopurams, luxury reception backdrops, scalloped silk drapery, and handcrafted ceremonial sets crafted by P.T. Selvam."
+          theme="light"
           className="mb-8 sm:mb-12"
         />
 
@@ -135,16 +136,16 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                 aria-controls="portfolio-grid"
                 tabIndex={isActive ? 0 : -1}
                 onClick={() => handleFilterChange(filter.id)}
-                className={`group px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 border min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C] ${
+                className={`group px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 border min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6E1830] ${
                   isActive
-                    ? 'bg-[#6E1830] text-[#FFFDF8] border-[#C9A45C] font-semibold shadow-md scale-105'
-                    : 'bg-[#F7F0E4] text-[#6E1830] border-[#C9A45C]/40 hover:border-[#6E1830] hover:bg-[#FFFDF8]'
+                    ? 'bg-[#6E1830] text-[#FFF8ED] border-[#6E1830] font-semibold shadow-md scale-105'
+                    : 'bg-[#FFF8ED] text-[#6E1830] border-[#6E1830]/20 hover:border-[#6E1830] hover:bg-[#F7F0E4]'
                 }`}
               >
                 <span>{filter.labelEnglish}</span>
                 {filter.labelTamil && (
                   <span className={`text-[10px] hidden md:inline font-serif italic ${
-                    isActive ? 'text-[#C9A45C]' : 'text-[#6E1830]/70'
+                    isActive ? 'text-[#FFF8ED]/80' : 'text-[#6E1830]/70'
                   }`}>
                     • {filter.labelTamil}
                   </span>
@@ -152,7 +153,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                 <span
                   className={`text-[11px] px-2 py-0.5 rounded-full ${
                     isActive
-                      ? 'bg-[#FFFDF8]/20 text-[#FFFDF8] font-bold'
+                      ? 'bg-[#FFF8ED]/20 text-[#FFF8ED] font-bold'
                       : 'bg-[#6E1830]/10 text-[#6E1830]'
                   }`}
                 >
@@ -177,7 +178,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                 description="We are regularly updating our verified stage catalog with new authentic photography."
                 actionText="View All Collections"
                 onAction={() => setActiveCategory('all')}
-                icon={<Sparkles className="w-8 h-8 text-[#C9A45C]" />}
+                icon={<Sparkles className="w-8 h-8 text-[#6E1830]" />}
               />
             </div>
           ) : (
@@ -190,7 +191,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
               return (
                 <article
                   key={project.id}
-                  className="group overflow-hidden flex flex-col justify-between border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-500 rounded-2xl bg-[#FFFDF8] shadow-[0_8px_30px_rgba(110,24,48,0.04)] hover:shadow-[0_15px_45px_rgba(110,24,48,0.12)]"
+                  className="group overflow-hidden flex flex-col justify-between border border-[#6E1830]/15 hover:border-[#6E1830] transition-all duration-500 rounded-2xl bg-[#FFF8ED] shadow-[0_8px_30px_rgba(74,14,27,0.04)] hover:shadow-[0_15px_45px_rgba(74,14,27,0.12)]"
                   aria-labelledby={`project-title-${project.id}`}
                 >
                   {/* Image Container with Interactive Overlay */}
@@ -216,7 +217,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                     />
 
                     {/* Gradient Overlay for Text Readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#300713]/85 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#4A0E1B]/85 via-transparent to-transparent pointer-events-none" />
 
                     {/* Top Badges */}
                     <div className="absolute top-3.5 inset-x-3.5 flex items-center justify-between pointer-events-none">
@@ -228,24 +229,24 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                         <Badge variant="dark">Verified Setup</Badge>
                       )}
 
-                      <span className="px-2.5 py-1 rounded-full bg-[#4A1022]/90 backdrop-blur-md text-[11px] font-medium text-[#FFFDF8] border border-[#C9A45C]/40 flex items-center gap-1.5 shadow-sm">
-                        <Images className="w-3.5 h-3.5 text-[#C9A45C]" />
+                      <span className="px-2.5 py-1 rounded-full bg-[#5A1426]/90 backdrop-blur-md text-[11px] font-medium text-[#FFF8ED] border border-white/20 flex items-center gap-1.5 shadow-sm">
+                        <Images className="w-3.5 h-3.5 text-[#FFF8ED]" />
                         <span>{galleryPhotoCount} Photos</span>
                       </span>
                     </div>
 
                     {/* Hover Action Prompt */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#300713]/40 backdrop-blur-[2px] pointer-events-none">
-                      <span className="px-5 py-2.5 rounded-full bg-[#6E1830] text-[#FFFDF8] border border-[#C9A45C] font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                        <Eye className="w-4 h-4 text-[#C9A45C]" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#4A0E1B]/40 backdrop-blur-[2px] pointer-events-none">
+                      <span className="px-5 py-2.5 rounded-full bg-[#6E1830] text-[#FFF8ED] border border-white/30 font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <Eye className="w-4 h-4 text-[#FFF8ED]" />
                         Explore Gallery ({galleryPhotoCount})
                       </span>
                     </div>
 
                     {/* Location & Event Tag in Bottom Corner */}
-                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-[#FFFDF8] pointer-events-none">
-                      <span className="flex items-center gap-1 font-medium text-[#C9A45C]">
-                        <MapPin className="w-3.5 h-3.5 text-[#C9A45C]" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-[#FFF8ED] pointer-events-none">
+                      <span className="flex items-center gap-1 font-medium text-[#FFF8ED]">
+                        <MapPin className="w-3.5 h-3.5 text-[#FFF8ED]" />
                         {project.location}
                       </span>
                       {project.date && (
@@ -261,14 +262,14 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                   <div className="p-6 sm:p-7 flex-grow flex flex-col justify-between">
                     <div>
                       <div className="mb-2">
-                        <span className="text-[11px] font-semibold uppercase tracking-wider text-[#C9A45C]">
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6E1830]">
                           {project.eventType}
                         </span>
                       </div>
 
                       <h3
                         id={`project-title-${project.id}`}
-                        className="text-xl sm:text-2xl font-serif font-bold text-[#6E1830] group-hover:text-[#4A1022] transition-colors leading-snug mb-2"
+                        className="text-xl sm:text-2xl font-serif font-bold text-[#6E1830] group-hover:text-[#4A0E1B] transition-colors leading-snug mb-2"
                       >
                         {project.title}
                       </h3>
@@ -283,7 +284,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                           {project.style.map((item, sIdx) => (
                             <span
                               key={sIdx}
-                              className="px-2.5 py-0.5 rounded text-[11px] bg-[#F7F0E4] border border-[#C9A45C]/30 text-[#6E1830] font-medium"
+                              className="px-2.5 py-0.5 rounded text-[11px] bg-[#F7F0E4] border border-[#6E1830]/15 text-[#6E1830] font-medium"
                             >
                               {item}
                             </span>
@@ -293,7 +294,7 @@ export const Portfolio: React.FC<PortfolioSectionProps> = ({
                     </div>
 
                     {/* Action Bar */}
-                    <div className="pt-4 border-t border-[#C9A45C]/25 flex flex-wrap items-center justify-between gap-3">
+                    <div className="pt-4 border-t border-[#6E1830]/15 flex flex-wrap items-center justify-between gap-3">
                       <Button
                         variant="secondary"
                         size="sm"

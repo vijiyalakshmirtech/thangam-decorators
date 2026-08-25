@@ -30,21 +30,20 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  // Base classes: 48px minimum touch target on mobile, smooth transitions, focus outlines
   const baseClasses =
-    'inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C9A45C] disabled:opacity-50 disabled:cursor-not-allowed select-none min-h-[48px] rounded-md';
+    'inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#6E1830] disabled:opacity-50 disabled:cursor-not-allowed select-none min-h-[48px] rounded-lg';
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      'bg-[#6E1830] text-[#FFFDF8] border border-[#C9A45C]/40 hover:bg-[#4A1022] hover:border-[#C9A45C] hover:shadow-[0_8px_25px_rgba(110,24,48,0.3)] active:scale-[0.98] font-semibold',
+      'bg-[#6E1830] text-[#FFF8ED] border border-white/20 hover:bg-[#4A0E1B] hover:border-white/40 hover:shadow-[0_8px_25px_rgba(74,14,27,0.35)] active:scale-[0.98] font-semibold',
     secondary:
-      'border border-[#C9A45C]/60 text-[#6E1830] bg-[#FFFDF8] hover:bg-[#F7F0E4] hover:border-[#6E1830] hover:shadow-sm active:scale-[0.98]',
+      'border border-[#6E1830]/30 text-[#6E1830] bg-[#FFF8ED] hover:bg-[#F7F0E4] hover:border-[#6E1830] hover:shadow-sm active:scale-[0.98] font-medium',
     ghost:
-      'text-[#6E1830] hover:text-[#4A1022] hover:bg-[#6E1830]/5 active:scale-[0.98]',
+      'text-[#FFF8ED] hover:text-white hover:bg-[#6E1830]/20 active:scale-[0.98]',
     whatsapp:
       'bg-[#25D366] text-[#FFFDF8] font-semibold hover:bg-[#1EBE5D] hover:shadow-[0_6px_20px_rgba(37,211,102,0.35)] active:scale-[0.98]',
     danger:
-      'bg-[#951B34] text-[#FFFDF8] hover:bg-[#6E1830] focus-visible:ring-red-400',
+      'bg-[#5A1426] text-[#FFF8ED] hover:bg-[#4A0E1B] focus-visible:ring-red-400',
   };
 
   const sizeClasses: Record<ButtonSize, string> = {

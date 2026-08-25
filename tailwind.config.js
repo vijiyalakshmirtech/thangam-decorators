@@ -8,49 +8,63 @@ export default {
     extend: {
       colors: {
         thangam: {
+          wine: '#7A1F3D',
+          maroon: '#5A1426',
+          'soft-burgundy': '#8B3A4E',
+          'deepest-burgundy': '#3B0D18',
           burgundy: {
-            DEFAULT: '#6E1830', // Primary Burgundy
-            50: '#FDF2F4',
-            100: '#FBE4E8',
-            200: '#F8CBD3',
-            300: '#F2A3B1',
-            400: '#E66F85',
-            500: '#D4405E',
-            600: '#B82645',
-            700: '#951B34',
-            800: '#6E1830', // Primary Brand Burgundy
-            900: '#4A1022', // Deep Wine
-            950: '#300713', // Ultra Deep Wine
+            DEFAULT: '#6E1830',
+            primary: '#6E1830',
+            deep: '#4A0E1B',
+            wine: '#7A1F3D',
+            maroon: '#5A1426',
+            soft: '#8B3A4E',
+            deepest: '#3B0D18',
+            darkest: '#3B0D18',
           },
-          wine: '#4A1022',
           cream: {
-            DEFAULT: '#F7F0E4', // Warm Cream (60% dominant canvas)
-            50: '#FFFDF8',      // Soft Ivory
-            100: '#FAF5EC',
-            200: '#F7F0E4',     // Warm Cream
-            300: '#EFE7D8',     // Muted Sand
-            400: '#E2D5BE',
-            500: '#D0BF9F',
+            DEFAULT: '#F7F0E4',
+            primary: '#F7F0E4',
+            dark: '#1F161A',
+            bright: '#FFF8ED',
+            light: '#FFF8ED',
+            offwhite: '#FFFDF8',
+            muted: '#EFE7D8',
           },
-          ivory: '#FFFDF8',
+          'cream-dark': '#1F161A',
+          'cream-bright': '#FFF8ED',
+          'cream-light': '#FFF8ED',
+          'cream-offwhite': '#FFFDF8',
+          'cream-muted': '#EFE7D8',
+          text: {
+            DEFAULT: '#1F161A',
+            dark: '#1F161A',
+            cream: '#FFF8ED',
+            creamMuted: '#F7F0E4',
+          },
           gold: {
-            DEFAULT: '#C9A45C', // Champagne Gold
-            50: '#FAF6ED',
-            100: '#F4ECD8',
-            200: '#E9D7B0',
-            300: '#DEC288',
-            400: '#D4B36F',
-            500: '#C9A45C',     // Primary Champagne Gold
-            600: '#B58D44',
-            700: '#967132',
-            800: '#7B5C2B',
-            900: '#654B24',
+            DEFAULT: '#C6A15B',
+            light: '#E0C078',
+            dark: '#9E7B35',
+            400: '#E0C078',
+            500: '#C6A15B',
+            600: '#9E7B35',
           },
-          rose: '#B88A78',      // Muted Rose Gold
-          charcoal: '#1F161A',  // Velvet Rich Charcoal
-          darkText: '#2C1820',
+          'gold-light': '#E0C078',
+          'gold-dark': '#9E7B35',
           whatsapp: '#25D366',
-        }
+        },
+        'thangam-wine': '#7A1F3D',
+        'thangam-maroon': '#5A1426',
+        'thangam-soft-burgundy': '#8B3A4E',
+        'thangam-deepest-burgundy': '#3B0D18',
+        'thangam-cream': '#F7F0E4',
+        'thangam-cream-dark': '#1F161A',
+        'thangam-cream-bright': '#FFF8ED',
+        'thangam-gold': '#C6A15B',
+        'thangam-gold-light': '#E0C078',
+        'thangam-gold-dark': '#9E7B35',
+        'thangam-whatsapp': '#25D366',
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Playfair Display', '"Noto Serif Tamil"', 'Georgia', 'serif'],

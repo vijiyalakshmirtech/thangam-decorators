@@ -1,7 +1,7 @@
-﻿import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
-import { Sparkles, Award, Users, CheckCircle, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { Sparkles, Users, CheckCircle, ShieldCheck, HeartHandshake } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,34 +12,30 @@ export interface WhyThangamProps {
   className?: string;
 }
 
-const stats = [
+const pillars = [
   {
-    number: '25+',
-    label: 'Years of Experience',
-    tamil: '25+ ஆண்டுகள் நற்பெயர்',
-    desc: 'Mastery in authentic Tamil wedding rituals and contemporary luxury stage scenography.',
-    icon: <Award className="w-6 h-6 text-[#C9A45C]" />,
+    title: '100% Punctual Delivery',
+    tamil: 'சரியான நேரத்தில் மேடை அமைப்பு',
+    desc: 'Your stage is fully rigged, illuminated, and inspected hours prior to your guests arrival.',
+    icon: <ShieldCheck className="w-6 h-6 text-[#FFF8ED]" />,
   },
   {
-    number: '1,000+',
-    label: 'Events Created',
-    tamil: '1000+ மங்கள நிகழ்வுகள்',
-    desc: 'Grand marriages, receptions, betrothals, and temple celebrations executed with perfection.',
-    icon: <Users className="w-6 h-6 text-[#C9A45C]" />,
+    title: 'Daily Fresh Flowers',
+    tamil: 'தினசரி புதிய மலர் கொள்முதல்',
+    desc: 'Direct daily sourcing of temple jasmine, lotus, and exotic blooms from regional flower markets.',
+    icon: <Sparkles className="w-6 h-6 text-[#FFF8ED]" />,
   },
   {
-    number: '100+',
-    label: 'Stage Designs',
-    tamil: '100+ பிரத்யேக மேடை வகைகள்',
-    desc: 'From sacred Vedic mandapams to monumental panoramic illuminated backdrops.',
-    icon: <Sparkles className="w-6 h-6 text-[#C9A45C]" />,
+    title: 'In-House Inventory',
+    tamil: 'சொந்த மேடை உபகரணங்கள்',
+    desc: 'Extensive collection of carved temple gopurams, contemporary arches, and lighting rigs.',
+    icon: <Users className="w-6 h-6 text-[#FFF8ED]" />,
   },
   {
-    number: '100%',
-    label: 'Custom Approach',
-    tamil: '100% பிரத்யேக வடிவமைப்பு',
-    desc: 'Tailored dimensions, custom color themes, and daily morning fresh flower procurement.',
-    icon: <HeartHandshake className="w-6 h-6 text-[#C9A45C]" />,
+    title: 'Proprietor Oversight',
+    tamil: 'உரிமையாளரின் நேரடி மேற்பார்வை',
+    desc: 'P.T. Selvam personally supervises the execution of every major wedding and reception stage.',
+    icon: <HeartHandshake className="w-6 h-6 text-[#FFF8ED]" />,
   },
 ];
 
@@ -81,64 +77,60 @@ export const WhyThangam: React.FC<WhyThangamProps> = ({
     <section
       id={id}
       ref={sectionRef}
-      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
+      className={`py-24 sm:py-32 bg-gradient-to-b from-[#4A0E1B] via-[#5A1426] to-[#4A0E1B] text-[#FFF8ED] relative overflow-hidden border-t border-white/10 ${className}`}
       aria-labelledby="why-thangam-heading"
     >
       <Container size="default">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <div className="mb-4 flex justify-center">
-            <Badge variant="gold" icon={<ShieldCheck className="w-3.5 h-3.5 text-[#6E1830]" />}>
+            <Badge variant="dark" icon={<ShieldCheck className="w-3.5 h-3.5 text-[#FFF8ED]" />}>
               Excellence & Distinction
             </Badge>
           </div>
 
           <h2
             id="why-thangam-heading"
-            className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium text-[#6E1830] tracking-tight leading-tight mb-4"
+            className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium text-[#FFF8ED] tracking-tight leading-tight mb-4"
           >
             THE PILLARS OF TRUST.
           </h2>
 
-          <p className="font-tamil text-base sm:text-xl font-medium text-[#C9A45C] mb-4">
+          <p className="font-tamil text-base sm:text-xl font-medium text-[#FFF8ED]/90 mb-4">
             ஏன் தங்கம் டெக்கரேட்டர்ஸ் உங்கள் குடும்பத்தின் முதல் தேர்வு?
           </p>
 
-          <p className="text-base text-[#1F161A]/80 font-light max-w-2xl mx-auto">
-            A quarter-century legacy of authentic craftsmanship, direct proprietor accountability, and uncompromised devotion to sacred milestone celebrations.
+          <p className="text-base text-[#F7F0E4]/85 font-light max-w-2xl mx-auto">
+            Authentic stage craftsmanship, direct proprietor accountability, and devotion to sacred milestone celebrations.
           </p>
 
-          <div className="mt-6 h-[1.5px] w-20 bg-gradient-to-r from-[#C9A45C] via-[#E0C078] to-[#9E7B35] mx-auto" />
+          <div className="mt-6 h-[1.5px] w-20 bg-white/20 mx-auto" />
         </div>
 
-        {/* Stats Grid */}
+        {/* Pillars Grid */}
         <div
           ref={statsRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16"
         >
-          {stats.map((item, index) => (
+          {pillars.map((item, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl bg-[#FFFDF8] border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 shadow-[0_4px_20px_rgba(110,24,48,0.04)] hover:shadow-lg group text-center flex flex-col items-center justify-between"
+              className="p-8 rounded-2xl bg-[#5A1426] border border-white/15 hover:border-white/30 transition-all duration-300 shadow-[0_4px_20px_rgba(74,14,27,0.3)] hover:shadow-lg group text-center flex flex-col items-center justify-between"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#6E1830] text-[#FFFDF8] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <div className="w-12 h-12 rounded-xl bg-[#6E1830] text-[#FFF8ED] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md border border-white/10">
                 {item.icon}
               </div>
 
               <div>
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-[#6E1830] tracking-tight mb-2">
-                  {item.number}
+                <div className="text-sm uppercase tracking-wider font-bold text-[#FFF8ED] mb-2 font-serif">
+                  {item.title}
                 </div>
 
-                <div className="text-xs uppercase tracking-widest font-bold text-[#1F161A] mb-1">
-                  {item.label}
-                </div>
-
-                <div className="font-tamil text-xs font-semibold text-[#C9A45C] mb-3">
+                <div className="font-tamil text-xs font-semibold text-[#FFF8ED]/80 mb-3">
                   {item.tamil}
                 </div>
 
-                <p className="text-xs text-[#1F161A]/75 leading-relaxed font-light">
+                <p className="text-xs text-[#F7F0E4]/75 leading-relaxed font-light">
                   {item.desc}
                 </p>
               </div>
@@ -147,42 +139,42 @@ export const WhyThangam: React.FC<WhyThangamProps> = ({
         </div>
 
         {/* Founder Trust Spotlight Box */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#FFFDF8] border border-[#C9A45C]/45 shadow-[0_12px_40px_rgba(110,24,48,0.06)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#5A1426] border border-white/15 shadow-[0_12px_40px_rgba(74,14,27,0.4)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-4 text-center lg:text-left">
-            <div className="w-20 h-20 rounded-2xl bg-[#6E1830] border-2 border-[#C9A45C] flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-md">
-              <span className="font-serif text-3xl font-bold text-[#FFFDF8]">PTS</span>
+            <div className="w-20 h-20 rounded-2xl bg-[#6E1830] border-2 border-white/20 flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-md">
+              <span className="font-serif text-3xl font-bold text-[#FFF8ED]">PTS</span>
             </div>
-            <h3 className="font-serif text-2xl font-bold text-[#6E1830]">
+            <h3 className="font-serif text-2xl font-bold text-[#FFF8ED]">
               P.T. Selvam
             </h3>
-            <span className="text-xs uppercase tracking-widest text-[#C9A45C] font-semibold block mt-0.5">
+            <span className="text-xs uppercase tracking-widest text-[#FFF8ED]/80 font-semibold block mt-0.5">
               Founder & Master Decorator
             </span>
-            <span className="text-xs text-[#1F161A]/70 font-sans block mt-1">
+            <span className="text-xs text-[#F7F0E4]/70 font-sans block mt-1">
               Erode, Tamil Nadu
             </span>
           </div>
 
           <div className="lg:col-span-8 space-y-4">
-            <p className="text-base sm:text-lg text-[#1F161A]/85 font-light leading-relaxed">
-              "We believe that a wedding stage is not merely decorative carpentry; it is the sacred altar where two families unite and where memories are etched for generations. Every flower garland, pillar alignment, and fabric fold receives my personal inspection."
-            </p>
+            <blockquote className="text-base sm:text-lg text-[#F7F0E4]/90 font-light leading-relaxed font-serif italic">
+              "A wedding stage is not merely decor; it is the sacred backdrop where lifelong vows are made and family legacies celebrated. Every pillar, flower string, and light beam must be executed with unwavering devotion."
+            </blockquote>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-medium text-[#6E1830]">
-                <CheckCircle className="w-4 h-4 text-[#C9A45C] flex-shrink-0" />
+              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
+                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
                 <span>Zero Middlemen & Transparent Planning</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-medium text-[#6E1830]">
-                <CheckCircle className="w-4 h-4 text-[#C9A45C] flex-shrink-0" />
+              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
+                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
                 <span>Prompt On-Time Setup Before Muhurtham</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-medium text-[#6E1830]">
-                <CheckCircle className="w-4 h-4 text-[#C9A45C] flex-shrink-0" />
+              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
+                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
                 <span>100% In-House Structures & Materials</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-medium text-[#6E1830]">
-                <CheckCircle className="w-4 h-4 text-[#C9A45C] flex-shrink-0" />
+              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
+                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
                 <span>Direct Proprietor Phone Accessibility</span>
               </div>
             </div>

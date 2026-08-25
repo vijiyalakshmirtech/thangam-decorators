@@ -54,15 +54,15 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#300713]/95 backdrop-blur-xl p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#4A0E1B]/95 backdrop-blur-xl p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Image Lightbox Viewer"
     >
       {/* Top Bar */}
       <div className="absolute top-4 inset-x-4 flex items-center justify-between z-20 max-w-6xl mx-auto">
-        <div className="text-[#FFFDF8] text-sm sm:text-base font-medium truncate pr-4">
-          <span className="text-[#C9A45C] font-serif text-lg sm:text-xl font-bold">{projectTitle}</span>
+        <div className="text-[#FFF8ED] text-sm sm:text-base font-medium truncate pr-4">
+          <span className="text-[#FFF8ED] font-serif text-lg sm:text-xl font-bold">{projectTitle}</span>
           {images.length > 1 && (
             <span className="text-[#F7F0E4]/60 text-xs ml-2">
               ({currentIndex + 1} of {images.length})
@@ -74,9 +74,9 @@ export const Lightbox: React.FC<LightboxProps> = ({
           type="button"
           onClick={onClose}
           aria-label="Close lightbox"
-          className="p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
+          className="p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white"
         >
-          <X className="w-6 h-6 text-[#C9A45C]" />
+          <X className="w-6 h-6 text-[#FFF8ED]" />
         </button>
       </div>
 
@@ -88,7 +88,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             disabled={currentIndex === 0}
             onClick={() => onNavigate(currentIndex - 1)}
             aria-label="Previous image"
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-[#FFFDF8] hover:text-[#C9A45C] bg-[#4A1022]/80 hover:bg-[#4A1022] rounded-full border border-[#C9A45C]/35 transition-all disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C] shadow-lg"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-[#FFF8ED] hover:text-white bg-[#5A1426] hover:bg-[#6E1830] rounded-full border border-white/20 transition-all disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white shadow-lg"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -98,7 +98,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             disabled={currentIndex === images.length - 1}
             onClick={() => onNavigate(currentIndex + 1)}
             aria-label="Next image"
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-[#FFFDF8] hover:text-[#C9A45C] bg-[#4A1022]/80 hover:bg-[#4A1022] rounded-full border border-[#C9A45C]/35 transition-all disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C] shadow-lg"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-[#FFF8ED] hover:text-white bg-[#5A1426] hover:bg-[#6E1830] rounded-full border border-white/20 transition-all disabled:opacity-20 disabled:cursor-not-allowed z-20 min-h-[48px] min-w-[48px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-white shadow-lg"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -110,7 +110,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <img
           src={currentImage.url}
           alt={currentImage.altText}
-          className="max-w-full max-h-[72vh] object-contain rounded-xl shadow-2xl border border-[#C9A45C]/30"
+          className="max-w-full max-h-[72vh] object-contain rounded-xl shadow-2xl border border-white/20"
         />
 
         {/* Caption & Inquiry CTA */}

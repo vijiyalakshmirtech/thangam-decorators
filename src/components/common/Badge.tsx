@@ -16,8 +16,8 @@ export const Badge: React.FC<BadgeProps> = ({
   icon,
 }) => {
   const variantClasses: Record<BadgeVariant, string> = {
-    gold: 'bg-[#C9A45C]/15 text-[#6E1830] border border-[#C9A45C]/40',
-    dark: 'bg-[#4A1022] text-[#FFFDF8] border border-[#C9A45C]/30',
+    gold: 'bg-[#6E1830]/10 text-[#6E1830] border border-[#6E1830]/25',
+    dark: 'bg-[#5A1426] text-[#FFF8ED] border border-white/20',
     emerald: 'bg-[#134E39]/15 text-[#134E39] border border-[#134E39]/30',
     maroon: 'bg-[#6E1830]/10 text-[#6E1830] border border-[#6E1830]/25',
   };

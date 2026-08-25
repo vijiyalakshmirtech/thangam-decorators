@@ -1,7 +1,8 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
 import { Sparkles, Crown, Compass } from 'lucide-react';
+import { SITE_CONTENT } from '../data/siteContent';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -84,12 +85,12 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({
     <section
       id={id}
       ref={sectionRef}
-      className={`py-24 sm:py-32 bg-[#FFFDF8] relative overflow-hidden border-y border-[#C9A45C]/20 ${className}`}
+      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-y border-[#6E1830]/15 ${className}`}
       aria-labelledby="brand-intro-heading"
     >
       {/* Background Decorative Motifs */}
       <div
-        className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C9A45C]/10 blur-3xl pointer-events-none"
+        className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#8B3A4E]/10 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
       <div
@@ -103,7 +104,7 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({
           {/* Eyebrow */}
           <div className="mb-6 flex justify-center">
             <Badge variant="gold" icon={<Sparkles className="w-3.5 h-3.5 text-[#6E1830]" />}>
-              The Heritage of Elegance
+              {SITE_CONTENT.about.eyebrow}
             </Badge>
           </div>
 
@@ -111,67 +112,60 @@ export const BrandIntro: React.FC<BrandIntroProps> = ({
           <h2
             id="brand-intro-heading"
             ref={headlineRef}
-            className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium text-[#6E1830] tracking-tight leading-[1.08] mb-8"
+            className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium text-[#6E1830] tracking-tight leading-[1.12] mb-8"
           >
-            WE DESIGN MOMENTS.
+            {SITE_CONTENT.about.heading}
           </h2>
 
           {/* Tamil Heritage Statement */}
-          <p className="font-tamil text-lg sm:text-2xl font-medium text-[#C9A45C] tracking-wide mb-6">
+          <p className="font-tamil text-lg sm:text-2xl font-medium text-[#6E1830]/80 tracking-wide mb-6">
             "ஒவ்வொரு திருமணத் தருணத்தையும் தெய்வீக கம்பீரத்துடன் உயிர்ப்பிக்கிறோம்."
           </p>
 
           {/* Editorial Supporting Narrative */}
-          <p
+          <div
             ref={textRef}
-            className="text-base sm:text-xl text-[#1F161A]/85 leading-relaxed font-light max-w-3xl mx-auto mb-16"
+            className="space-y-4 text-base sm:text-lg text-[#1F161A]/85 leading-relaxed font-light max-w-3xl mx-auto mb-16"
           >
-            From regal wedding mandapams steeped in Vedic purity to breathtaking contemporary reception scenography, <strong className="text-[#6E1830] font-medium">Thangam Decorators</strong> transforms ordinary venues into extraordinary memories. Under the visionary stewardship of <strong className="text-[#6E1830] font-medium">P.T. Selvam</strong>, every stage is conceived as a singular work of spatial artistry.
-          </p>
+            {SITE_CONTENT.about.paragraphs.map((para, idx) => (
+              <p key={idx}>{para}</p>
+            ))}
+          </div>
 
-          {/* Three Luxury Pillars */}
+          {/* Four Authentic Luxury Pillars */}
           <div
             ref={cardsRef}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-left mb-16"
           >
-            {/* Pillar 1 */}
-            <div className="p-8 rounded-xl bg-[#F7F0E4]/60 border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 hover:shadow-lg group">
-              <div className="w-12 h-12 rounded-lg bg-[#6E1830] text-[#FFFDF8] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
-                <Crown className="w-6 h-6 text-[#C9A45C]" />
+            {SITE_CONTENT.about.pillars.map((pillar, idx) => (
+              <div
+                key={idx}
+                className="p-8 rounded-2xl bg-[#FFF8ED] border border-[#6E1830]/15 hover:border-[#6E1830] transition-all duration-300 shadow-[0_4px_24px_rgba(74,14,27,0.04)] hover:shadow-lg group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#6E1830] text-[#FFF8ED] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+                  {idx === 0 && <Crown className="w-6 h-6 text-[#FFF8ED]" />}
+                  {idx === 1 && <Sparkles className="w-6 h-6 text-[#FFF8ED]" />}
+                  {idx === 2 && <Crown className="w-6 h-6 text-[#FFF8ED]" />}
+                  {idx === 3 && <Compass className="w-6 h-6 text-[#FFF8ED]" />}
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#6E1830] mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm text-[#1F161A]/75 leading-relaxed font-light">
+                  {pillar.description}
+                </p>
               </div>
-              <h3 className="font-serif text-2xl font-semibold text-[#6E1830] mb-3">
-                Architectural Grandeur
-              </h3>
-              <p className="text-sm text-[#1F161A]/75 leading-relaxed font-light">
-                Custom mandapam structures, jharokha carved arches, and multi-tiered scenography engineered for monumental presence.
-              </p>
-            </div>
+            ))}
+          </div>
 
-            {/* Pillar 2 */}
-            <div className="p-8 rounded-xl bg-[#F7F0E4]/60 border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 hover:shadow-lg group">
-              <div className="w-12 h-12 rounded-lg bg-[#6E1830] text-[#FFFDF8] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
-                <Sparkles className="w-6 h-6 text-[#C9A45C]" />
-              </div>
-              <h3 className="font-serif text-2xl font-semibold text-[#6E1830] mb-3">
-                Fresh Botanical Artistry
-              </h3>
-              <p className="text-sm text-[#1F161A]/75 leading-relaxed font-light">
-                Madurai jasmine, Dutch roses, and traditional foliage procured daily at dawn for vibrant fragrance and uncompromised freshness.
-              </p>
-            </div>
-
-            {/* Pillar 3 */}
-            <div className="p-8 rounded-xl bg-[#F7F0E4]/60 border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 hover:shadow-lg group">
-              <div className="w-12 h-12 rounded-lg bg-[#6E1830] text-[#FFFDF8] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
-                <Compass className="w-6 h-6 text-[#C9A45C]" />
-              </div>
-              <h3 className="font-serif text-2xl font-semibold text-[#6E1830] mb-3">
-                Proprietor Direct Craft
-              </h3>
-              <p className="text-sm text-[#1F161A]/75 leading-relaxed font-light">
-                Personalized consultation, transparent scope planning, and on-site oversight by P.T. Selvam from concept to celebration.
-              </p>
-            </div>
+          {/* Founder Quote Card */}
+          <div className="p-8 sm:p-10 rounded-2xl bg-[#FFF8ED] border border-[#6E1830]/20 text-center shadow-md max-w-3xl mx-auto">
+            <blockquote className="font-serif italic text-lg sm:text-xl text-[#6E1830] leading-relaxed mb-4">
+              "{SITE_CONTENT.about.founderQuote}"
+            </blockquote>
+            <span className="text-xs uppercase tracking-widest font-bold text-[#1F161A]/70 font-sans">
+              {SITE_CONTENT.about.founderTitle}
+            </span>
           </div>
         </div>
       </Container>

@@ -3,22 +3,27 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Core - 60% Cream / 25% Burgundy / 10% Champagne Gold / 5% Supporting */
-  --thangam-cream: #F7F0E4;
-  --thangam-ivory: #FFFDF8;
-  --thangam-sand: #EFE7D8;
-
+  /* Current Intended Brand Palette */
+  --thangam-wine: #7A1F3D;
+  --thangam-maroon: #5A1426;
+  --thangam-burgundy-soft: #8B3A4E;
+  --thangam-burgundy-deepest: #3B0D18;
+  --thangam-burgundy-deep: #4A0E1B;
   --thangam-burgundy: #6E1830;
-  --thangam-wine: #4A1022;
-  --thangam-wine-deep: #300713;
 
-  --thangam-gold: #C9A45C;
+  --thangam-cream: #F7F0E4;
+  --thangam-cream-dark: #1F161A;
+  --thangam-cream-bright: #FFF8ED;
+  --thangam-cream-light: #FFF8ED;
+  --thangam-offwhite: #FFFDF8;
+  --thangam-cream-muted: #EFE7D8;
+
+  --thangam-gold: #C6A15B;
   --thangam-gold-light: #E0C078;
   --thangam-gold-dark: #9E7B35;
-  --thangam-rose: #B88A78;
 
-  --thangam-charcoal: #1F161A;
-  --thangam-dark-text: #2C1820;
+  --thangam-whatsapp: #25D366;
+  --thangam-text: #1F161A;
 
   /* Motion Standards */
   --ease-royal: cubic-bezier(0.16, 1, 0.3, 1);
@@ -30,12 +35,12 @@
   html {
     font-family: 'Plus Jakarta Sans', 'Mukta Malar', system-ui, -apple-system, sans-serif;
     background-color: var(--thangam-cream);
-    color: var(--thangam-charcoal);
+    color: var(--thangam-text);
   }
 
   body {
     background-color: var(--thangam-cream);
-    color: var(--thangam-charcoal);
+    color: var(--thangam-text);
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -51,7 +56,7 @@
 
   /* Accessible focus indicators */
   :focus-visible {
-    outline: 2px solid var(--thangam-gold);
+    outline: 2px solid var(--thangam-burgundy);
     outline-offset: 2px;
   }
 }
@@ -87,58 +92,62 @@ html.lenis, html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C9A45C;
+  background: #6E1830;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6E1830;
+  background: #4A0E1B;
+}
+
+/* Editorial Text Gradients (Persistent Utility Classes) */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C6A15B 0%, #E0C078 50%, #9E7B35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.burgundy-gradient-text {
+  background: linear-gradient(135deg, #8B3A4E 0%, #7A1F3D 35%, #5A1426 70%, #3B0D18 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
 @layer components {
-  /* Subtle gold hairline borders */
+  .burgundy-hairline {
+    border: 1px solid rgba(110, 24, 48, 0.2);
+  }
+
+  .cream-hairline {
+    border: 1px solid rgba(247, 240, 228, 0.2);
+  }
+
   .gold-hairline {
-    border: 1px solid rgba(201, 164, 92, 0.35);
+    border: 1px solid rgba(198, 161, 91, 0.35);
   }
 
   .gold-hairline-subtle {
-    border: 1px solid rgba(201, 164, 92, 0.2);
-  }
-
-  .gold-border-hover {
-    transition: border-color var(--duration-hover) ease, box-shadow var(--duration-hover) ease, transform var(--duration-hover) ease;
-  }
-
-  .gold-border-hover:hover {
-    border-color: rgba(201, 164, 92, 0.8);
-    box-shadow: 0 10px 30px rgba(110, 24, 48, 0.08);
+    border: 1px solid rgba(198, 161, 91, 0.2);
   }
 
   /* Luxury Cream Card Surface */
   .luxury-cream-card {
-    background: #FFFDF8;
-    border: 1px solid rgba(201, 164, 92, 0.3);
-    box-shadow: 0 4px 24px rgba(74, 16, 34, 0.04);
+    background: #FFF8ED;
+    border: 1px solid rgba(110, 24, 48, 0.15);
+    box-shadow: 0 4px 24px rgba(74, 14, 27, 0.04);
   }
 
-  /* Luxury Wine Statement Surface */
-  .luxury-wine-card {
-    background: linear-gradient(145deg, #6E1830 0%, #4A1022 100%);
-    border: 1px solid rgba(201, 164, 92, 0.4);
-    box-shadow: 0 12px 40px rgba(48, 7, 19, 0.25);
-  }
-
-  /* Editorial Gold Text Gradient */
-  .gold-gradient-text {
-    background: linear-gradient(135deg, #C9A45C 0%, #E0C078 50%, #9E7B35 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .burgundy-gradient-text {
-    background: linear-gradient(135deg, #6E1830 0%, #4A1022 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  /* Luxury Burgundy Card Surface */
+  .luxury-burgundy-card {
+    background: #5A1426;
+    border: 1px solid rgba(255, 248, 237, 0.15);
+    box-shadow: 0 12px 40px rgba(74, 14, 27, 0.35);
   }
 }
 

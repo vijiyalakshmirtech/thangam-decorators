@@ -1,9 +1,10 @@
-﻿import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Container } from '../components/common/Container';
 import { MagneticButton } from '../components/common/MagneticButton';
 import { Button } from '../components/common/Button';
 import { Sparkles, MessageCircle, Phone } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { SITE_CONTENT } from '../data/siteContent';
 import { generateWhatsAppUrl, generateTelUrl } from '../utils/urlHelpers';
 import { trackEvent } from '../lib/analytics';
 import gsap from 'gsap';
@@ -25,7 +26,7 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const whatsAppUrl = generateWhatsAppUrl(
-    `Hello P.T. Selvam, I am inspired by your stage work and would like to discuss decor for our upcoming wedding.`
+    `Hello P.T. Selvam, I would like to discuss stage decor for our upcoming wedding.`
   );
   const telUrl = generateTelUrl(siteConfig.contact.phonePrimary);
 
@@ -60,43 +61,42 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({
     <section
       id={id}
       ref={sectionRef}
-      className={`py-28 sm:py-36 bg-gradient-to-br from-[#6E1830] via-[#4A1022] to-[#300713] text-[#FFFDF8] relative overflow-hidden border-y border-[#C9A45C]/40 ${className}`}
+      className={`py-28 sm:py-36 bg-gradient-to-br from-[#5A1426] via-[#4A0E1B] to-[#5A1426] text-[#FFF8ED] relative overflow-hidden border-y border-white/15 ${className}`}
       aria-labelledby="statement-heading"
     >
-      {/* Background Ambient Gold Halos */}
+      {/* Background Ambient Gradients */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#C9A45C]/15 blur-[160px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#8B3A4E]/15 blur-[160px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
       <Container size="default" className="relative z-10 text-center">
         <div ref={textRef} className="max-w-4xl mx-auto flex flex-col items-center">
 
-          {/* Subtle Champagne Gold Accent Pill */}
+          {/* Eyebrow Pill */}
           <div className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#300713]/80 border border-[#C9A45C]/50 text-xs font-mono tracking-[0.25em] text-[#C9A45C] uppercase backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#E0C078]" />
-              The Thangam Promise
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6E1830] border border-white/20 text-xs font-mono tracking-[0.25em] text-[#FFF8ED] uppercase backdrop-blur-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#FFF8ED]" />
+              {siteConfig.brand.name}
             </span>
           </div>
 
-          {/* Giant Monumental Headline */}
+          {/* Monumental Headline */}
           <h2
             id="statement-heading"
-            className="text-5xl sm:text-7xl md:text-8xl font-serif font-bold text-[#FFFDF8] tracking-tight leading-[1.02] mb-6"
+            className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-[#FFF8ED] tracking-tight leading-[1.08] mb-6"
           >
-            YOUR EVENT. <br className="hidden sm:block" />
-            <span className="text-[#C9A45C] font-serif italic">OUR ART.</span>
+            {SITE_CONTENT.ctaBanner.heading}
           </h2>
 
           {/* Tamil Signature Narrative */}
-          <p className="font-tamil text-xl sm:text-3xl font-medium text-[#E0C078] mb-6 tracking-wide">
-            "உங்கள் மங்கள நன்னாள். எங்கள் கலைப்படைப்பு."
+          <p className="font-tamil text-xl sm:text-2xl font-medium text-[#FFF8ED]/90 mb-6 tracking-wide">
+            "உங்கள் மங்கள நன்னாள். எங்கள் பாரம்பரிய கலைப்படைப்பு."
           </p>
 
-          {/* Editorial Subtitle */}
-          <p className="text-lg sm:text-2xl text-[#F7F0E4]/90 font-serif italic max-w-2xl leading-relaxed mb-10">
-            We create stages that become an everlasting part of your most cherished family memories.
+          {/* Subtitle */}
+          <p className="text-base sm:text-xl text-[#F7F0E4]/90 font-light max-w-2xl leading-relaxed mb-10">
+            {SITE_CONTENT.ctaBanner.subheading}
           </p>
 
           {/* Action CTAs */}
@@ -107,13 +107,13 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({
                   variant="secondary"
                   size="lg"
                   onClick={() => {
-                    trackEvent('cta_click', { sourceLocation: 'brand_statement', ctaText: 'Book Your Event' });
+                    trackEvent('cta_click', { sourceLocation: 'brand_statement', ctaText: 'Request Quote' });
                     onOpenQuoteModal();
                   }}
                   leftIcon={<Sparkles className="w-4 h-4 text-[#6E1830]" />}
                   className="w-full sm:w-auto uppercase tracking-wider text-xs font-bold"
                 >
-                  Book Your Event
+                  {SITE_CONTENT.ctaBanner.quoteButtonText}
                 </Button>
               </MagneticButton>
             )}
@@ -136,11 +136,11 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({
               variant="ghost"
               size="lg"
               href={telUrl}
-              leftIcon={<Phone className="w-4 h-4 text-[#C9A45C]" />}
+              leftIcon={<Phone className="w-4 h-4 text-[#FFF8ED]" />}
               onClick={() => trackEvent('phone_click', { sourceLocation: 'statement_call' })}
-              className="w-full sm:w-auto text-xs uppercase tracking-wider text-[#FFFDF8] hover:text-[#C9A45C]"
+              className="w-full sm:w-auto text-xs uppercase tracking-wider text-[#FFF8ED] hover:text-[#FFF8ED]"
             >
-              Direct Call: {siteConfig.contact.phonePrimary}
+              {SITE_CONTENT.ctaBanner.callButtonText}
             </Button>
           </div>
         </div>

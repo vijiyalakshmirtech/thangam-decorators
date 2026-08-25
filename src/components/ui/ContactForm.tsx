@@ -202,8 +202,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             onFocus={handleFocus}
             onChange={handleChange}
             placeholder="e.g. Senthil Kumar"
-            className={`w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors ${
-              errors.fullName ? 'border-rose-500' : 'border-[#C9A45C]/40'
+            className={`w-full px-4 py-3 rounded-xl bg-[#FFF8ED] border text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#6E1830] transition-colors ${
+              errors.fullName ? 'border-rose-500' : 'border-[#6E1830]/20'
             }`}
           />
           {errors.fullName && (
@@ -228,8 +228,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             onFocus={handleFocus}
             onChange={handleChange}
             placeholder="e.g. 98426 69882"
-            className={`w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors ${
-              errors.phone ? 'border-rose-500' : 'border-[#C9A45C]/40'
+            className={`w-full px-4 py-3 rounded-xl bg-[#FFF8ED] border text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#6E1830] transition-colors ${
+              errors.phone ? 'border-rose-500' : 'border-[#6E1830]/20'
             }`}
           />
           {errors.phone && <p className="mt-1 text-xs text-rose-600">{errors.phone}</p>}
@@ -251,7 +251,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             value={formData.eventType}
             onFocus={handleFocus}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#C9A45C]/40 text-sm text-[#1F161A] focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[#FFF8ED] border border-[#6E1830]/20 text-sm text-[#1F161A] focus:outline-none focus:ring-2 focus:ring-[#6E1830] transition-colors"
           >
             <option value="Wedding & Muhurtham">Traditional Wedding & Muhurtham</option>
             <option value="Grand Reception">Grand Evening Reception</option>
@@ -278,8 +278,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
             value={formData.eventDate}
             onFocus={handleFocus}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border text-sm text-[#1F161A] focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors ${
-              errors.eventDate ? 'border-rose-500' : 'border-[#C9A45C]/40'
+            className={`w-full px-4 py-3 rounded-xl bg-[#FFF8ED] border text-sm text-[#1F161A] focus:outline-none focus:ring-2 focus:ring-[#6E1830] transition-colors ${
+              errors.eventDate ? 'border-rose-500' : 'border-[#6E1830]/20'
             }`}
           />
           {errors.eventDate && (
@@ -304,7 +304,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
           onFocus={handleFocus}
           onChange={handleChange}
           placeholder="e.g. Kalyana Mandapam, Perundurai Road, Erode"
-          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#C9A45C]/40 text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-[#FFF8ED] border border-[#6E1830]/20 text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#6E1830] transition-colors"
         />
       </div>
 
@@ -324,7 +324,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
           onFocus={handleFocus}
           onChange={handleChange}
           placeholder="e.g. Looking for a traditional temple theme mandapam with fresh lotus and jasmine florals."
-          className="w-full px-4 py-3 rounded-xl bg-[#FFFDF8] border border-[#C9A45C]/40 text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A45C] transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-[#FFF8ED] border border-[#6E1830]/20 text-sm text-[#1F161A] placeholder-[#1F161A]/40 focus:outline-none focus:ring-2 focus:ring-[#6E1830] transition-colors resize-none"
         />
       </div>
 
@@ -335,7 +335,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess, className =
         size="lg"
         isLoading={isSubmitting}
         className="w-full uppercase tracking-wider text-xs font-bold"
-        rightIcon={<Send className="w-4 h-4 text-[#C9A45C]" />}
+        rightIcon={<Send className="w-4 h-4 text-[#FFF8ED]" />}
       >
         Request Free Stage Consultation
       </Button>

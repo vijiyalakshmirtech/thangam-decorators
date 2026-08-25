@@ -103,7 +103,7 @@ export const SignatureDecorations: React.FC<SignatureDecorationsProps> = ({
   return (
     <section
       id={id}
-      className={`py-24 sm:py-32 bg-[#FFFDF8] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
+      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#6E1830]/15 ${className}`}
       aria-labelledby="decorations-heading"
     >
       <Container size="wide">
@@ -111,7 +111,7 @@ export const SignatureDecorations: React.FC<SignatureDecorationsProps> = ({
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <div className="mb-4 flex justify-center">
             <Badge variant="gold" icon={<Sparkles className="w-3.5 h-3.5 text-[#6E1830]" />}>
-              Curated Specialties
+              Event Décor Offerings
             </Badge>
           </div>
 
@@ -122,23 +122,23 @@ export const SignatureDecorations: React.FC<SignatureDecorationsProps> = ({
             SIGNATURE DÉCOR STYLES.
           </h2>
 
-          <p className="font-tamil text-base sm:text-xl font-medium text-[#C9A45C] mb-4">
+          <p className="font-tamil text-base sm:text-xl font-medium text-[#6E1830]/80 mb-4">
             அழகுணர்ச்சியும் பாரம்பரியமும் இணைந்த பிரத்யேக மேடை அலங்காரங்கள்
           </p>
 
           <p className="text-base text-[#1F161A]/80 font-light max-w-2xl mx-auto">
-            Explore our eight signature aesthetic disciplines, meticulously tailored to the architectural acoustics and grandeur of your venue.
+            From traditional muhurtham mandapams to evening reception stages and family ceremonies across Erode and Western Tamil Nadu.
           </p>
 
-          <div className="mt-6 h-[1.5px] w-20 bg-gradient-to-r from-[#C9A45C] via-[#E0C078] to-[#9E7B35] mx-auto" />
+          <div className="mt-6 h-[1.5px] w-20 bg-[#6E1830]/20 mx-auto" />
         </div>
 
-        {/* Asymmetric Luxury Category Grid */}
+        {/* Signature Category Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className={`group relative rounded-2xl overflow-hidden bg-[#F7F0E4] border border-[#C9A45C]/35 hover:border-[#6E1830] shadow-[0_6px_25px_rgba(110,24,48,0.04)] hover:shadow-[0_15px_45px_rgba(110,24,48,0.12)] transition-all duration-500 flex flex-col justify-end min-h-[380px] sm:min-h-[420px] ${cat.aspectSpan}`}
+              className={`group relative rounded-2xl overflow-hidden bg-[#FFF8ED] border border-[#6E1830]/15 hover:border-[#6E1830] shadow-[0_6px_25px_rgba(74,14,27,0.06)] hover:shadow-[0_15px_45px_rgba(74,14,27,0.15)] transition-all duration-500 flex flex-col justify-end min-h-[380px] sm:min-h-[420px] ${cat.aspectSpan}`}
             >
               {/* Background Authentic Photograph */}
               <img
@@ -148,24 +148,24 @@ export const SignatureDecorations: React.FC<SignatureDecorationsProps> = ({
               />
 
               {/* Dynamic Burgundy Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#300713]/95 via-[#4A1022]/40 to-transparent group-hover:from-[#300713]/98 group-hover:via-[#6E1830]/50 transition-colors duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4A0E1B]/95 via-[#5A1426]/40 to-transparent group-hover:from-[#4A0E1B]/98 group-hover:via-[#6E1830]/50 transition-colors duration-500 pointer-events-none" />
 
               {/* Top Accent Pill */}
               <div className="absolute top-5 left-5 z-10">
-                <span className="text-[10px] uppercase tracking-widest font-semibold text-[#FFFDF8] bg-[#6E1830]/90 px-3 py-1 rounded-full border border-[#C9A45C]/40 backdrop-blur-sm">
+                <span className="text-[10px] uppercase tracking-widest font-semibold text-[#FFF8ED] bg-[#6E1830]/90 px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm">
                   {cat.accent}
                 </span>
               </div>
 
               {/* Content Box */}
               <div className="relative z-10 p-6 sm:p-8 text-left">
-                <div className="font-tamil text-xs sm:text-sm font-semibold text-[#C9A45C] mb-1">
+                <div className="font-tamil text-xs sm:text-sm font-semibold text-[#FFF8ED]/90 mb-1">
                   {cat.tamil}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#FFFDF8] mb-2 group-hover:text-[#E0C078] transition-colors flex items-center justify-between">
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#FFF8ED] mb-2 transition-colors flex items-center justify-between">
                   <span>{cat.title}</span>
-                  <ArrowUpRight className="w-5 h-5 text-[#C9A45C] opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                  <ArrowUpRight className="w-5 h-5 text-[#FFF8ED] opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                 </h3>
 
                 <p className="text-sm text-[#F7F0E4]/85 font-light leading-relaxed mb-4 max-w-xl">
@@ -179,7 +179,7 @@ export const SignatureDecorations: React.FC<SignatureDecorationsProps> = ({
                       trackEvent('cta_click', { sourceLocation: `category_${cat.id}`, ctaText: 'Inquire Category' });
                       onOpenQuoteModal();
                     }}
-                    className="text-xs uppercase tracking-widest font-semibold text-[#C9A45C] hover:text-[#FFFDF8] inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:underline"
+                    className="text-xs uppercase tracking-widest font-semibold text-[#FFF8ED] hover:text-[#FFF8ED] inline-flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:underline"
                   >
                     <span>Inquire this Style</span>
                     <span className="text-sm">→</span>

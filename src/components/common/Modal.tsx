@@ -66,10 +66,10 @@ export const Modal: React.FC<ModalProps> = ({
       {/* Modal Dialog Card */}
       <div
         ref={modalRef}
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#FFFDF8] border border-[#C9A45C]/45 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-8 transition-all duration-300 text-[#1F161A] ${className}`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#FFF8ED] border border-[#6E1830]/20 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-8 transition-all duration-300 text-[#1F161A] ${className}`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#C9A45C]/25">
+        <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#6E1830]/15">
           {title ? (
             <h3
               id="modal-title"
@@ -85,7 +85,7 @@ export const Modal: React.FC<ModalProps> = ({
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="p-2 -mr-2 text-[#6E1830]/70 hover:text-[#6E1830] hover:bg-[#F7F0E4] rounded-xl transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
+            className="p-2 -mr-2 text-[#6E1830]/70 hover:text-[#6E1830] hover:bg-[#F7F0E4] rounded-xl transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#6E1830]"
           >
             <X className="w-5 h-5 text-[#6E1830]" />
           </button>

@@ -71,16 +71,16 @@ export const App: React.FC = () => {
         {/* Cinematic 3D Hero */}
         <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* Section 01: Brand Intro ("WE DESIGN MOMENTS.") */}
+        {/* Section 01: Brand Heritage & Pillars */}
         <BrandIntro id="brand-intro" />
 
-        {/* Section 02: Transformation Experience ("HOW A VENUE BECOMES A PALACE.") */}
+        {/* Section 02: Transformation Experience */}
         <TransformationExperience id="experience" />
 
         {/* Section 03: Signature Decor Categories */}
         <SignatureDecorations id="decorations" onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
-        {/* Section 04: Interactive Stage Showroom ("THE STAGE IS THE MOMENT.") */}
+        {/* Section 04: Interactive Stage Showroom */}
         <StageShowroom id="showroom" onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
         {/* Section 05: Master Stage Scenography Portfolio */}
@@ -89,10 +89,10 @@ export const App: React.FC = () => {
         {/* Section 06: Why Thangam & Founder Pillars */}
         <WhyThangam id="why-thangam" />
 
-        {/* Section 07: 5-Step Process */}
+        {/* Section 07: 4-Step Process */}
         <Process id="process" />
 
-        {/* Section 08: Full-width Burgundy Brand Statement ("YOUR EVENT. OUR ART.") */}
+        {/* Section 08: Full-width Burgundy Brand Statement */}
         <BrandStatement id="statement" onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
 
         {/* Supporting Services Grid */}

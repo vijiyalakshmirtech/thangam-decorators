@@ -59,18 +59,18 @@ export const Stage3DCanvas: React.FC<Stage3DCanvasProps> = ({ className = '' }) 
     container.appendChild(renderer.domElement);
 
     // 3. Warm Ambient and Point Lighting
-    const ambientLight = new THREE.AmbientLight(0xF7F0E4, 1.2);
+    const ambientLight = new THREE.AmbientLight(0xFFF8ED, 1.0);
     scene.add(ambientLight);
 
-    const goldPointLight = new THREE.PointLight(0xC9A45C, 2.5, 20);
-    goldPointLight.position.set(2, 3, 4);
-    scene.add(goldPointLight);
+    const warmPointLight = new THREE.PointLight(0x8B3A4E, 2.5, 22);
+    warmPointLight.position.set(2, 3, 4);
+    scene.add(warmPointLight);
 
-    const burgundyPointLight = new THREE.PointLight(0x6E1830, 1.8, 20);
+    const burgundyPointLight = new THREE.PointLight(0x6E1830, 2.0, 20);
     burgundyPointLight.position.set(-3, -2, 2);
     scene.add(burgundyPointLight);
 
-    // 4. Floating Gold Particles / Jasmine Sparks
+    // 4. Floating Particles / Jasmine Sparks
     const particleCount = isMobile ? 25 : 60;
     const particleGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
@@ -86,29 +86,29 @@ export const Stage3DCanvas: React.FC<Stage3DCanvasProps> = ({ className = '' }) 
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     const particleMaterial = new THREE.PointsMaterial({
-      color: 0xC9A45C,
+      color: 0xFFF8ED,
       size: isMobile ? 0.08 : 0.1,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.5,
       blending: THREE.AdditiveBlending,
     });
 
     const particles = new THREE.Points(particleGeometry, particleMaterial);
     scene.add(particles);
 
-    // 5. Geometric Gold Arches / Torana Silhouette Wireframes
+    // 5. Geometric Arches / Torana Silhouette Wireframes
     const archGroup = new THREE.Group();
 
     // Outer Arch
     const outerCurve = new THREE.EllipseCurve(0, 0, 4.5, 3.8, 0, Math.PI, false, 0);
     const outerPoints = outerCurve.getPoints(40);
     const outerGeo = new THREE.BufferGeometry().setFromPoints(outerPoints);
-    const goldLineMat = new THREE.LineBasicMaterial({
-      color: 0xC9A45C,
+    const outerLineMat = new THREE.LineBasicMaterial({
+      color: 0xFFF8ED,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.15,
     });
-    const outerArch = new THREE.Line(outerGeo, goldLineMat);
+    const outerArch = new THREE.Line(outerGeo, outerLineMat);
     archGroup.add(outerArch);
 
     // Inner Arch
@@ -116,9 +116,9 @@ export const Stage3DCanvas: React.FC<Stage3DCanvasProps> = ({ className = '' }) 
     const innerPoints = innerCurve.getPoints(40);
     const innerGeo = new THREE.BufferGeometry().setFromPoints(innerPoints);
     const innerLineMat = new THREE.LineBasicMaterial({
-      color: 0xE0C078,
+      color: 0xFFF8ED,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.12,
     });
     const innerArch = new THREE.Line(innerGeo, innerLineMat);
     archGroup.add(innerArch);
@@ -126,10 +126,10 @@ export const Stage3DCanvas: React.FC<Stage3DCanvasProps> = ({ className = '' }) 
     // Central Subtle Mandala Ring
     const ringGeo = new THREE.RingGeometry(1.6, 1.63, 48);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: 0xC9A45C,
+      color: 0xFFF8ED,
       side: THREE.DoubleSide,
       transparent: true,
-      opacity: 0.2,
+      opacity: 0.15,
     });
     const ringMesh = new THREE.Mesh(ringGeo, ringMat);
     ringMesh.position.set(0, 1.8, -0.5);
@@ -292,7 +292,7 @@ export const Stage3DCanvas: React.FC<Stage3DCanvasProps> = ({ className = '' }) 
       particleMaterial.dispose();
       outerGeo.dispose();
       innerGeo.dispose();
-      goldLineMat.dispose();
+      outerLineMat.dispose();
       innerLineMat.dispose();
       ringGeo.dispose();
       ringMat.dispose();

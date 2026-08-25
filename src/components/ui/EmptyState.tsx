@@ -17,17 +17,17 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
   actionText,
   actionHref,
   onAction,
-  icon = <Sparkles className="w-8 h-8 text-thangam-gold-400" />,
+  icon = <Sparkles className="w-8 h-8 text-[#6E1830]" />,
 }) => {
   return (
-    <div className="p-8 sm:p-12 text-center rounded-xl bg-thangam-dark-900/60 border border-thangam-gold-500/15 max-w-lg mx-auto">
-      <div className="w-14 h-14 rounded-full bg-thangam-gold-500/10 flex items-center justify-center mx-auto mb-4">
+    <div className="p-8 sm:p-12 text-center rounded-2xl bg-[#FFF8ED] border border-[#6E1830]/20 max-w-lg mx-auto shadow-md">
+      <div className="w-14 h-14 rounded-full bg-[#6E1830]/10 border border-[#6E1830]/20 flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-serif font-semibold text-thangam-ivory-50 mb-2">
+      <h3 className="text-xl font-serif font-bold text-[#6E1830] mb-2">
         {title}
       </h3>
-      <p className="text-sm text-thangam-ivory-100/70 max-w-sm mx-auto mb-6">
+      <p className="text-sm text-[#1F161A]/75 max-w-sm mx-auto mb-6 font-light">
         {description}
       </p>
       {actionText && (actionHref || onAction) && (

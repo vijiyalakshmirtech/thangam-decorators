@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
-import { Sparkles, MessageSquare, Compass, Palette, Flower2, Award } from 'lucide-react';
+import { Sparkles, MessageSquare, Compass, Flower2, Award } from 'lucide-react';
+import { SITE_CONTENT } from '../data/siteContent';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -15,38 +16,31 @@ export interface ProcessProps {
 const processSteps = [
   {
     step: '01',
-    title: 'Discover & Align',
+    title: 'Vision & Hall Consultation',
     tamil: 'கலந்தாய்வு & தேவை அறிதல்',
-    desc: 'Initial consultation to understand your family tradition, wedding timing, guest capacity, and hall dimensions in Erode or Kongu region.',
-    icon: <MessageSquare className="w-5 h-5 text-[#C9A45C]" />,
+    desc: 'Share your event date, kalyana mandapam name, and aesthetic preferences or mood boards.',
+    icon: <MessageSquare className="w-5 h-5 text-[#6E1830]" />,
   },
   {
     step: '02',
-    title: 'Concept & Blueprint',
+    title: 'Custom Design Proposal',
     tamil: 'மேடை வரைபடம் & வடிவமைப்பு',
-    desc: 'Translating concepts into clear stage layouts, selecting flower palettes (Carnations, Roses, Jasmine), and finalizing structure dimensions.',
-    icon: <Compass className="w-5 h-5 text-[#C9A45C]" />,
+    desc: 'We tailor the stage dimensions, floral varieties, and lighting palette to fit your venue and budget.',
+    icon: <Compass className="w-5 h-5 text-[#6E1830]" />,
   },
   {
     step: '03',
-    title: 'Design & Crafting',
-    tamil: 'பட்டறை தயாரிப்பு & கட்டமைப்பு',
-    desc: 'Our in-house fabrication team prepares hand-carved jali panels, mandapam pillars, lighting trusses, and silk valance drapes.',
-    icon: <Palette className="w-5 h-5 text-[#C9A45C]" />,
+    title: 'Material & Floral Curation',
+    tamil: 'மலர் மற்றும் பொருட்கள் தயாரிப்பு',
+    desc: 'Fresh temple blooms and handcrafted structural sets are prepared at our Erode workshop.',
+    icon: <Flower2 className="w-5 h-5 text-[#6E1830]" />,
   },
   {
     step: '04',
-    title: 'Dawn Fresh Weaving',
-    tamil: 'அதிகாலை மலர் அலங்கார வேலை',
-    desc: 'Freshly procured flowers arrive at dawn. Our artisan florists hand-weave garlands, urli bowls, and stage backdrops on-site.',
-    icon: <Flower2 className="w-5 h-5 text-[#C9A45C]" />,
-  },
-  {
-    step: '05',
-    title: 'Flawless Delivery',
+    title: 'Flawless On-Site Execution',
     tamil: 'நிறைவான மேடை அர்ப்பணிப்பு',
-    desc: 'Final lighting test and P.T. Selvam personal quality walkthrough hours prior to muhurtham for a completely stress-free celebration.',
-    icon: <Award className="w-5 h-5 text-[#C9A45C]" />,
+    desc: 'Our dedicated crew erects, lights, and details the stage well before the muhurtham begins.',
+    icon: <Award className="w-5 h-5 text-[#6E1830]" />,
   },
 ];
 
@@ -88,7 +82,7 @@ export const Process: React.FC<ProcessProps> = ({
     <section
       id={id}
       ref={sectionRef}
-      className={`py-24 sm:py-32 bg-[#FFFDF8] relative overflow-hidden border-t border-[#C9A45C]/25 ${className}`}
+      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#6E1830]/15 ${className}`}
       aria-labelledby="process-heading"
     >
       <Container size="default">
@@ -96,7 +90,7 @@ export const Process: React.FC<ProcessProps> = ({
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <div className="mb-4 flex justify-center">
             <Badge variant="gold" icon={<Sparkles className="w-3.5 h-3.5 text-[#6E1830]" />}>
-              Disciplined Execution
+              {SITE_CONTENT.process.eyebrow}
             </Badge>
           </div>
 
@@ -104,36 +98,36 @@ export const Process: React.FC<ProcessProps> = ({
             id="process-heading"
             className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium text-[#6E1830] tracking-tight leading-tight mb-4"
           >
-            OUR 5-STEP JOURNEY.
+            {SITE_CONTENT.process.heading}
           </h2>
 
-          <p className="font-tamil text-base sm:text-xl font-medium text-[#C9A45C] mb-4">
-            கருத்துரு முதல் கண்கவர் மேடை வரை துல்லியமான 5 படிநிலைகள்
+          <p className="font-tamil text-base sm:text-xl font-medium text-[#6E1830]/80 mb-4">
+            கருத்துரு முதல் கண்கவர் மேடை வரை துல்லியமான 4 படிநிலைகள்
           </p>
 
           <p className="text-base text-[#1F161A]/80 font-light max-w-2xl mx-auto">
-            A seamless, transparent, and punctual workflow that guarantees peace of mind for your family on your most sacred day.
+            {SITE_CONTENT.process.subheading}
           </p>
 
-          <div className="mt-6 h-[1.5px] w-20 bg-gradient-to-r from-[#C9A45C] via-[#E0C078] to-[#9E7B35] mx-auto" />
+          <div className="mt-6 h-[1.5px] w-20 bg-[#6E1830]/20 mx-auto" />
         </div>
 
         {/* Process Timeline Grid */}
         <div
           ref={stepsRef}
-          className="grid grid-cols-1 md:grid-cols-5 gap-6 sm:gap-6 relative"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-6 relative"
         >
           {processSteps.map((step) => (
             <div
               key={step.step}
-              className="p-6 rounded-2xl bg-[#F7F0E4]/70 border border-[#C9A45C]/35 hover:border-[#6E1830] transition-all duration-300 shadow-[0_4px_20px_rgba(110,24,48,0.04)] hover:shadow-lg group flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-[#FFF8ED] border border-[#6E1830]/15 hover:border-[#6E1830] transition-all duration-300 shadow-[0_4px_20px_rgba(74,14,27,0.04)] hover:shadow-lg group flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-serif text-3xl font-bold text-[#6E1830] group-hover:text-[#C9A45C] transition-colors">
+                  <span className="font-serif text-3xl font-bold text-[#6E1830] group-hover:text-[#4A0E1B] transition-colors">
                     {step.step}
                   </span>
-                  <div className="w-9 h-9 rounded-lg bg-[#FFFDF8] border border-[#C9A45C]/40 flex items-center justify-center shadow-sm">
+                  <div className="w-9 h-9 rounded-lg bg-[#F7F0E4] border border-[#6E1830]/20 flex items-center justify-center shadow-sm">
                     {step.icon}
                   </div>
                 </div>
@@ -142,7 +136,7 @@ export const Process: React.FC<ProcessProps> = ({
                   {step.title}
                 </h3>
 
-                <div className="font-tamil text-xs font-semibold text-[#C9A45C] mb-3">
+                <div className="font-tamil text-xs font-semibold text-[#6E1830]/80 mb-3">
                   {step.tamil}
                 </div>
 
@@ -151,8 +145,8 @@ export const Process: React.FC<ProcessProps> = ({
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-[#C9A45C]/25 text-[10px] uppercase tracking-widest font-semibold text-[#6E1830]/70">
-                Phase {step.step}
+              <div className="pt-4 mt-4 border-t border-[#6E1830]/15 text-[10px] uppercase tracking-widest font-semibold text-[#6E1830]/70">
+                Step {step.step}
               </div>
             </div>
           ))}
