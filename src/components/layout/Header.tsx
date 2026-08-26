@@ -106,7 +106,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
                 <Button
                   variant="primary"
                   size="sm"
-                  onClick={onOpenQuoteModal}
+                  onClick={() => {
+                    trackEvent('cta_click', { sourceLocation: 'header', ctaText: 'Book Your Event' });
+                    onOpenQuoteModal();
+                  }}
                   leftIcon={<Sparkles className="w-3.5 h-3.5 text-[#4A0E1B]" />}
                   className="text-xs uppercase tracking-wider"
                 >

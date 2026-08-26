@@ -65,6 +65,7 @@ export const Button: React.FC<ButtonProps> = ({
         rel={safeRel}
         className={combinedClasses}
         aria-disabled={disabled}
+        onClick={props.onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>}
       >
         {isLoading && <LoadingSpinner />}
         {!isLoading && leftIcon && <span className="flex-shrink-0">{leftIcon}</span>}

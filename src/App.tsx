@@ -20,6 +20,9 @@ import { Services } from './sections/Services';
 import { Faqs } from './sections/Faqs';
 import { Contact } from './sections/Contact';
 
+// Analytics
+import { initAnalytics } from './lib/analytics';
+
 // Smooth Scroll & Animations
 import Lenis from 'lenis';
 import gsap from 'gsap';
@@ -31,6 +34,9 @@ export const App: React.FC = () => {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   useEffect(() => {
+    // Initialize Google Analytics 4 (non-blocking)
+    initAnalytics();
+
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.2,

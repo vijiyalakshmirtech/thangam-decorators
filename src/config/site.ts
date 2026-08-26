@@ -116,8 +116,8 @@ export const siteConfig: SiteConfig = {
     defaultOgImage: "/assets/brand/logo.jpg"
   },
   analytics: {
-    enabled: false,
-    measurementId: null,
+    enabled: true,
+    measurementId: "G-WPBYE3PMPQ",
     anonymizeIp: true
   }
 };
