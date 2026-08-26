@@ -67,7 +67,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   site: {
     name: "Thangam Decorators",
-    url: null,
+    url: "https://thangam-decorators.vercel.app",
     description: "Premium wedding and stage decoration services in Erode.",
     locale: "en-IN"
   },
@@ -97,7 +97,10 @@ export const siteConfig: SiteConfig = {
     state: "Tamil Nadu",
     country: "India",
     landmarks: null,
-    coordinates: null
+    coordinates: {
+      latitude: 11.3410,
+      longitude: 77.7172
+    }
   },
   seo: {
     defaultTitle: "Thangam Decorators — Premium Wedding & Stage Decoration in Erode",
@@ -112,8 +115,8 @@ export const siteConfig: SiteConfig = {
       "P.T. Selvam decorators Erode",
       "Erode wedding flower decoration"
     ],
-    // Development fallback image. Production should use a dedicated 1200×630 Open Graph image asset.
-    defaultOgImage: "/assets/brand/logo.jpg"
+    // Dedicated 1200×630 Open Graph image asset
+    defaultOgImage: "https://thangam-decorators.vercel.app/assets/brand/og-image.webp"
   },
   analytics: {
     enabled: true,
