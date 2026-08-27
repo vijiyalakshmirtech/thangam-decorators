@@ -159,6 +159,15 @@ html.lenis, html.lenis body {
 }
 
 @layer components {
+  /* Scrollbar hiding utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .burgundy-hairline {
     border: 1px solid rgba(110, 24, 48, 0.2);
   }
