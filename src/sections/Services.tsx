@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import { Container } from '../components/common/Container';
-import { SectionHeading } from '../components/common/SectionHeading';
-import { Badge } from '../components/common/Badge';
+import { TechLabel } from '../components/common/TechLabel';
+import { SpatialFrame } from '../components/common/SpatialFrame';
+import { GlowLine } from '../components/common/GlowLine';
 import { Button } from '../components/common/Button';
 import { SERVICES_DATA } from '../data/services';
 import { generateWhatsAppUrl } from '../utils/urlHelpers';
@@ -13,7 +16,8 @@ import {
   Heart,
   CheckCircle2,
   MessageCircle,
-  ArrowRight
+  ArrowRight,
+  Layers
 } from 'lucide-react';
 
 export interface ServicesProps {
@@ -22,10 +26,10 @@ export interface ServicesProps {
 }
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
-  'wedding-mandapams': <Landmark className="w-6 h-6 text-[#6E1830]" />,
-  'reception-stages': <Sparkles className="w-6 h-6 text-[#6E1830]" />,
-  'pre-wedding-ceremonies': <Heart className="w-6 h-6 text-[#6E1830]" />,
-  'temple-cultural-events': <Flower2 className="w-6 h-6 text-[#6E1830]" />,
+  'wedding-mandapams': <Landmark className="w-5 h-5 text-[#E0C078]" />,
+  'reception-stages': <Sparkles className="w-5 h-5 text-[#E0C078]" />,
+  'pre-wedding-ceremonies': <Heart className="w-5 h-5 text-[#E0C078]" />,
+  'temple-cultural-events': <Flower2 className="w-5 h-5 text-[#E0C078]" />,
 };
 
 export const Services: React.FC<ServicesProps> = ({
@@ -35,126 +39,151 @@ export const Services: React.FC<ServicesProps> = ({
   return (
     <section
       id={id}
-      className={`py-24 sm:py-32 bg-[#F7F0E4] relative overflow-hidden border-t border-[#6E1830]/15 ${className}`}
+      className={`py-24 sm:py-32 bg-gradient-to-b from-[#3B0D18] via-[#4A0E1B] to-[#3B0D18] text-[#FFF8ED] relative overflow-hidden border-t border-[#C6A15B]/20 ${className}`}
       aria-labelledby="services-heading"
     >
-      {/* Subtle ambient lighting backdrop */}
+      {/* Studio Grid Overlay */}
+      <div className="absolute inset-0 studio-grid-overlay pointer-events-none opacity-30" aria-hidden="true" />
       <div
-        className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-[#8B3A4E]/5 blur-[140px] rounded-full pointer-events-none"
+        className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[500px] bg-[#C6A15B]/10 blur-[150px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
-      <Container size="default" className="relative z-10">
-        {/* Section Heading */}
-        <SectionHeading
-          eyebrow="Décor Capabilities"
-          title="BESPOKE SCENOGRAPHY SERVICES."
-          subtitle="பாரம்பரிய நேர்த்தியும் நவீன கம்பீரமும் இணைந்த சேவைகள்"
-          description="From auspicious Vedic muhurtham mandapams in temple halls to high-glamour evening reception backdrops, P.T. Selvam and his team deliver complete on-site decor execution across Erode and Western Tamil Nadu."
-          theme="light"
-          className="mb-12 sm:mb-16"
-        />
+      <Container size="wide" className="relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <div className="mb-4 flex justify-center gap-2">
+            <TechLabel variant="gold" icon={<Layers className="w-3.5 h-3.5" />}>
+              SCENOGRAPHY DISCIPLINES • ERODE STUDIO LAB
+            </TechLabel>
+          </div>
 
-        {/* 4 Core Services Grid */}
+          <h2
+            id="services-heading"
+            className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium text-[#FFF8ED] tracking-tight leading-tight mb-4"
+          >
+            DIGITAL SCENOGRAPHY SERVICES.
+          </h2>
+
+          <p className="font-tamil text-base sm:text-xl font-medium text-[#E0C078] mb-4">
+            பாரம்பரிய நேர்த்தியும் நவீன கம்பீரமும் இணைந்த மேடை அலங்காரங்கள்
+          </p>
+
+          <p className="text-base text-[#F7F0E4]/85 font-light max-w-2xl mx-auto">
+            From sacred Vedic muhurtham mandapams to monumental evening reception backdrops, P.T. Selvam leads end-to-end stage design and execution across Erode and Western Tamil Nadu.
+          </p>
+
+          <GlowLine variant="gold" className="max-w-xs mx-auto mt-6" />
+        </div>
+
+        {/* 4 Core Scenography Service Modules */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
-          {SERVICES_DATA.map((service) => {
+          {SERVICES_DATA.map((service, idx) => {
             const whatsAppUrl = generateWhatsAppUrl(
               `Hello P.T. Selvam, I would like to inquire about "${service.titleEnglish}" decoration for our upcoming event.`
             );
             const icon = SERVICE_ICONS[service.id] || (
-              <Sparkles className="w-6 h-6 text-[#6E1830]" />
+              <Sparkles className="w-5 h-5 text-[#E0C078]" />
             );
 
             return (
-              <article
+              <SpatialFrame
                 key={service.id}
-                className="group rounded-2xl bg-[#FFF8ED] border border-[#6E1830]/15 hover:border-[#6E1830] p-6 sm:p-9 flex flex-col justify-between transition-all duration-500 shadow-[0_6px_25px_rgba(74,14,27,0.04)] hover:shadow-[0_15px_40px_rgba(74,14,27,0.1)]"
-                aria-labelledby={`service-title-${service.id}`}
+                label={`SERVICE // 0${idx + 1}`}
+                theme="dark"
+                className="p-6 sm:p-8 flex flex-col justify-between group"
               >
-                <div>
-                  {/* Top Card Header: Icon & Category Tag */}
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-[#6E1830]/10 border border-[#6E1830]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      {icon}
+                <article
+                  className="flex flex-col justify-between h-full"
+                  aria-labelledby={`service-title-${service.id}`}
+                >
+                  <div>
+                    {/* Header Row: Icon & Tag */}
+                    <div className="flex items-center justify-between gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-black/40 border border-[#C6A15B]/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                        {icon}
+                      </div>
+
+                      <TechLabel variant="gold">
+                        BESPOKE CRAFTSMANSHIP
+                      </TechLabel>
                     </div>
 
-                    <Badge variant="gold">Bespoke Setup</Badge>
-                  </div>
+                    {/* English Title */}
+                    <h3
+                      id={`service-title-${service.id}`}
+                      className="text-2xl sm:text-3xl font-serif font-bold text-[#FFF8ED] group-hover:text-[#E0C078] transition-colors leading-snug mb-1"
+                    >
+                      {service.titleEnglish}
+                    </h3>
 
-                  {/* English Service Title */}
-                  <h3
-                    id={`service-title-${service.id}`}
-                    className="text-2xl sm:text-3xl font-serif font-bold text-[#6E1830] group-hover:text-[#4A0E1B] transition-colors leading-snug mb-1"
-                  >
-                    {service.titleEnglish}
-                  </h3>
+                    {/* Tamil Title */}
+                    {service.titleTamil && (
+                      <p className="font-tamil text-sm font-semibold text-[#E0C078] mb-3">
+                        {service.titleTamil}
+                      </p>
+                    )}
 
-                  {/* Tamil Service Subtitle */}
-                  {service.titleTamil && (
-                    <p className="font-tamil text-sm font-semibold text-[#6E1830]/80 mb-3">
-                      {service.titleTamil}
+                    {/* Short Description */}
+                    <p className="text-sm text-[#F7F0E4]/80 leading-relaxed mb-6 font-light">
+                      {service.shortDescription}
                     </p>
-                  )}
 
-                  {/* Short Description */}
-                  <p className="text-sm text-[#1F161A]/80 leading-relaxed mb-6 font-light">
-                    {service.shortDescription}
-                  </p>
-
-                  {/* Features Checklist */}
-                  <div className="mb-6 pt-5 border-t border-[#6E1830]/15">
-                    <h4 className="text-[11px] font-semibold uppercase tracking-widest text-[#6E1830] mb-3">
-                      Key Execution Highlights
-                    </h4>
-                    <ul className="space-y-2.5">
-                      {service.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1F161A]/85 font-light">
-                          <CheckCircle2 className="w-4 h-4 text-[#6E1830] flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Execution Highlights Checklist */}
+                    <div className="mb-6 pt-5 border-t border-white/10">
+                      <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#E0C078] mb-3">
+                        DISCIPLINE SPECIFICATIONS:
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#F7F0E4]/90 font-light">
+                            <CheckCircle2 className="w-4 h-4 text-[#E0C078] flex-shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
 
-                {/* Card Action Row */}
-                <div className="pt-5 border-t border-[#6E1830]/15 flex flex-wrap items-center justify-between gap-3">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    href="#portfolio"
-                    rightIcon={<ArrowRight className="w-3.5 h-3.5 text-[#6E1830] group-hover:translate-x-1 transition-transform" />}
-                    className="text-xs font-semibold"
-                    onClick={() =>
-                      trackEvent('service_view', {
-                        serviceId: service.id,
-                        category: service.relatedCategory,
-                      })
-                    }
-                  >
-                    View Stage Designs
-                  </Button>
-
-                  {whatsAppUrl && (
+                  {/* Action Bar */}
+                  <div className="pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
                     <Button
-                      variant="whatsapp"
+                      variant="secondary"
                       size="sm"
-                      href={whatsAppUrl}
-                      target="_blank"
-                      leftIcon={<MessageCircle className="w-3.5 h-3.5" />}
-                      className="text-xs font-semibold"
+                      href="#portfolio"
+                      rightIcon={<ArrowRight className="w-3.5 h-3.5 text-[#E0C078] group-hover:translate-x-1 transition-transform" />}
+                      className="text-xs font-semibold border-[#C6A15B]/30 hover:border-[#E0C078]"
                       onClick={() =>
-                        trackEvent('whatsapp_click', {
-                          sourceLocation: 'services_card',
+                        trackEvent('service_view', {
                           serviceId: service.id,
+                          category: service.relatedCategory,
                         })
                       }
                     >
-                      Inquire
+                      View Stage Designs
                     </Button>
-                  )}
-                </div>
-              </article>
+
+                    {whatsAppUrl && (
+                      <Button
+                        variant="whatsapp"
+                        size="sm"
+                        href={whatsAppUrl ?? undefined}
+                        target="_blank"
+                        leftIcon={<MessageCircle className="w-3.5 h-3.5" />}
+                        className="text-xs font-semibold uppercase tracking-wider"
+                        onClick={() =>
+                          trackEvent('whatsapp_click', {
+                            sourceLocation: 'services_card',
+                            serviceId: service.id,
+                          })
+                        }
+                      >
+                        Inquire
+                      </Button>
+                    )}
+                  </div>
+                </article>
+              </SpatialFrame>
             );
           })}
         </div>
@@ -162,3 +191,5 @@ export const Services: React.FC<ServicesProps> = ({
     </section>
   );
 };
+
+export default Services;

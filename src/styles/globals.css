@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Current Intended Brand Palette */
+  /* Core Luxury Brand Palette */
   --thangam-wine: #7A1F3D;
   --thangam-maroon: #5A1426;
   --thangam-burgundy-soft: #8B3A4E;
@@ -11,6 +11,7 @@
   --thangam-burgundy-deep: #4A0E1B;
   --thangam-burgundy: #6E1830;
 
+  /* Architectural Cream & Surfaces */
   --thangam-cream: #F7F0E4;
   --thangam-cream-dark: #1F161A;
   --thangam-cream-bright: #FFF8ED;
@@ -18,10 +19,13 @@
   --thangam-offwhite: #FFFDF8;
   --thangam-cream-muted: #EFE7D8;
 
+  /* Studio Gold & Accents */
   --thangam-gold: #C6A15B;
   --thangam-gold-light: #E0C078;
   --thangam-gold-dark: #9E7B35;
+  --thangam-gold-bright: #F3E5AB;
 
+  /* Utility & Functional */
   --thangam-whatsapp: #25D366;
   --thangam-text: #1F161A;
 
@@ -47,7 +51,7 @@
 
   h1, h2, h3, h4, .font-serif {
     font-family: 'Cormorant Garamond', 'Noto Serif Tamil', 'Playfair Display', Georgia, serif;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
 
   .font-tamil {
@@ -56,8 +60,8 @@
 
   /* Accessible focus indicators */
   :focus-visible {
-    outline: 2px solid var(--thangam-burgundy);
-    outline-offset: 2px;
+    outline: 2px solid var(--thangam-gold);
+    outline-offset: 3px;
   }
 }
 
@@ -84,25 +88,25 @@ html.lenis, html.lenis body {
 
 /* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F7F0E4;
+  background: #3B0D18;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6E1830;
-  border-radius: 4px;
+  background: #C6A15B;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A0E1B;
+  background: #E0C078;
 }
 
-/* Editorial Text Gradients (Persistent Utility Classes) */
+/* Editorial Text Gradients */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #C6A15B 0%, #E0C078 50%, #9E7B35 100%);
+  background: linear-gradient(135deg, #C6A15B 0%, #E0C078 45%, #F3E5AB 70%, #9E7B35 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -117,6 +121,41 @@ html.lenis, html.lenis body {
   background-clip: text;
   color: transparent;
   display: inline-block;
+}
+
+/* Digital Studio Utilities */
+.studio-glass-panel {
+  background: rgba(255, 248, 237, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(198, 161, 91, 0.25);
+}
+
+.studio-glass-dark {
+  background: rgba(59, 13, 24, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(198, 161, 91, 0.2);
+}
+
+.studio-grid-overlay {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(198, 161, 91, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 161, 91, 0.05) 1px, transparent 1px);
+}
+
+.studio-dot-matrix {
+  background-image: radial-gradient(rgba(198, 161, 91, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.gold-glow-subtle {
+  box-shadow: 0 0 25px rgba(198, 161, 91, 0.18);
+}
+
+.burgundy-glow-subtle {
+  box-shadow: 0 0 35px rgba(110, 24, 48, 0.3);
 }
 
 @layer components {
@@ -139,15 +178,15 @@ html.lenis, html.lenis body {
   /* Luxury Cream Card Surface */
   .luxury-cream-card {
     background: #FFF8ED;
-    border: 1px solid rgba(110, 24, 48, 0.15);
+    border: 1px solid rgba(198, 161, 91, 0.2);
     box-shadow: 0 4px 24px rgba(74, 14, 27, 0.04);
   }
 
   /* Luxury Burgundy Card Surface */
   .luxury-burgundy-card {
-    background: #5A1426;
-    border: 1px solid rgba(255, 248, 237, 0.15);
-    box-shadow: 0 12px 40px rgba(74, 14, 27, 0.35);
+    background: #4A0E1B;
+    border: 1px solid rgba(198, 161, 91, 0.25);
+    box-shadow: 0 12px 40px rgba(59, 13, 24, 0.45);
   }
 }
 

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
@@ -26,7 +28,7 @@ const categories: CategoryItem[] = [
     title: 'Wedding Stage',
     tamil: 'திருமண மேடை அலங்காரம்',
     desc: 'Grand royal wedding stages adorned with fragrant florals, architectural pillars, and sacred lighting.',
-    image: '/assets/portfolio/mandapams/auspicious-green-gold-mandapam.webp',
+    image: '/assets/portfolio/traditional-mandapam/auspicious-green-gold-mandapam.webp',
     accent: 'Vedic Sanctum',
     aspectSpan: 'col-span-1 md:col-span-2 lg:col-span-2',
   },
@@ -53,7 +55,7 @@ const categories: CategoryItem[] = [
     title: 'Traditional Mandapam',
     tamil: 'பாரம்பரிய முகூர்த்த மண்டபம்',
     desc: 'Sacred banana tree motifs, auspicious greenery mats, parrot floral hangings, and temple domes.',
-    image: '/assets/portfolio/mandapams/traditional-banana-leaf-parrot-stage.webp',
+    image: '/assets/portfolio/traditional-mandapam/traditional-banana-leaf-parrot-stage.webp',
     accent: 'Heritage Auspicious',
     aspectSpan: 'col-span-1 md:col-span-2 lg:col-span-2',
   },
@@ -71,7 +73,7 @@ const categories: CategoryItem[] = [
     title: 'Floral Décor',
     tamil: 'இயற்கை மலர் அலங்காரம்',
     desc: 'Artisanal hand-crafted peacock sculptures, fragrant rose cascades, and pure Madurai jasmine strings.',
-    image: '/assets/portfolio/cultural/floral-peacock-sculpture-urli.webp',
+    image: '/assets/portfolio/traditional-mandapam/greenery-mat-floral-panel-stage.webp',
     accent: 'Botanical Couture',
     aspectSpan: 'col-span-1 md:col-span-1 lg:col-span-1',
   },
@@ -89,7 +91,7 @@ const categories: CategoryItem[] = [
     title: 'Milestone Ceremonies',
     tamil: 'மங்கள நன்னாள் அலங்காரம்',
     desc: 'Tailored stage decor for Seemantham, Sashtiabdhapoorthi, and family celebrations with cultural fidelity.',
-    image: '/assets/portfolio/family-ceremonies/traditional-swing-backdrop.webp',
+    image: '/assets/portfolio/family-ceremonies/seemantham-cradle-ceremony-stage.webp',
     accent: 'Sacred Milestones',
     aspectSpan: 'col-span-1 md:col-span-2 lg:col-span-2',
   },
@@ -133,7 +135,7 @@ export const SignatureDecorations: React.FC<SignatureDecorationsProps> = ({
           <div className="mt-6 h-[1.5px] w-20 bg-[#6E1830]/20 mx-auto" />
         </div>
 
-        {/* Signature Category Grid */}
+        {/* Asymmetric Luxury Category Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {categories.map((cat) => (
             <div

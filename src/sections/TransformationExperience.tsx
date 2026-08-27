@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useEffect } from 'react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
@@ -29,7 +31,7 @@ const steps = [
     concept: 'Design Alignment',
     desc: 'Selecting temple gopuram pillars, floral arches, velvet drapes, and lighting rigs tailored to your family tradition.',
     icon: <Palette className="w-5 h-5 text-[#FFF8ED]" />,
-    image: '/assets/portfolio/mandapams/gold-jali-circular-floral-stage.webp',
+    image: '/assets/portfolio/traditional-mandapam/gold-jali-circular-floral-stage.webp',
   },
   {
     step: '03',
@@ -47,7 +49,7 @@ const steps = [
     concept: 'Artisan Floristry',
     desc: 'Freshly harvested Madurai jasmine, roses, and auspicious greens hand-woven on-site at dawn before the ceremony.',
     icon: <Sparkles className="w-5 h-5 text-[#FFF8ED]" />,
-    image: '/assets/portfolio/cultural/floral-peacock-sculpture-urli.webp',
+    image: '/assets/portfolio/traditional-mandapam/greenery-mat-floral-panel-stage.webp',
   },
   {
     step: '05',

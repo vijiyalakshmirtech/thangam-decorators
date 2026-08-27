@@ -25,7 +25,8 @@ if (typeof window !== 'undefined') {
  * Resolves the active GA4 Measurement ID from environment variables or site configuration.
  */
 export function getMeasurementId(): string | null {
-  const envId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+  const envId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   if (typeof envId === 'string' && envId.trim().length > 0 && envId !== 'PASTE_MY_GA4_MEASUREMENT_ID_HERE') {
     return envId.trim();
   }
@@ -104,8 +105,8 @@ export function trackPageView(pagePath?: string, pageTitle?: string): void {
 export function trackEvent(event: ConversionEvent, payload: EventPayload = {}): void {
   if (typeof window === 'undefined') return;
 
-  // Development/Debug logging
-  if (import.meta.env.DEV && import.meta.env.VITE_DEBUG_ANALYTICS === 'true') {
+  // Development/Debug logging (optional, non-blocking)
+  if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_DEBUG_ANALYTICS === 'true') {
     console.debug(`[Analytics Track] ${event}:`, payload);
   }
 

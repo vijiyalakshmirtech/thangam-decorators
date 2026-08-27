@@ -1,7 +1,12 @@
+'use client';
+
 import React, { useRef, useEffect } from 'react';
 import { Container } from '../components/common/Container';
-import { Badge } from '../components/common/Badge';
-import { Sparkles, Users, CheckCircle, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { TechLabel } from '../components/common/TechLabel';
+import { SpatialFrame } from '../components/common/SpatialFrame';
+import { GlowLine } from '../components/common/GlowLine';
+import { Sparkles, Users, CheckCircle, ShieldCheck, HeartHandshake, Award } from 'lucide-react';
+import { siteConfig } from '../config/site';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,28 +19,32 @@ export interface WhyThangamProps {
 
 const pillars = [
   {
+    index: '01',
     title: '100% Punctual Delivery',
     tamil: 'சரியான நேரத்தில் மேடை அமைப்பு',
     desc: 'Your stage is fully rigged, illuminated, and inspected hours prior to your guests arrival.',
-    icon: <ShieldCheck className="w-6 h-6 text-[#FFF8ED]" />,
+    icon: <ShieldCheck className="w-5 h-5 text-[#E0C078]" />,
   },
   {
+    index: '02',
     title: 'Daily Fresh Flowers',
     tamil: 'தினசரி புதிய மலர் கொள்முதல்',
     desc: 'Direct daily sourcing of temple jasmine, lotus, and exotic blooms from regional flower markets.',
-    icon: <Sparkles className="w-6 h-6 text-[#FFF8ED]" />,
+    icon: <Sparkles className="w-5 h-5 text-[#E0C078]" />,
   },
   {
+    index: '03',
     title: 'In-House Inventory',
     tamil: 'சொந்த மேடை உபகரணங்கள்',
     desc: 'Extensive collection of carved temple gopurams, contemporary arches, and lighting rigs.',
-    icon: <Users className="w-6 h-6 text-[#FFF8ED]" />,
+    icon: <Users className="w-5 h-5 text-[#E0C078]" />,
   },
   {
+    index: '04',
     title: 'Proprietor Oversight',
     tamil: 'உரிமையாளரின் நேரடி மேற்பார்வை',
     desc: 'P.T. Selvam personally supervises the execution of every major wedding and reception stage.',
-    icon: <HeartHandshake className="w-6 h-6 text-[#FFF8ED]" />,
+    icon: <HeartHandshake className="w-5 h-5 text-[#E0C078]" />,
   },
 ];
 
@@ -77,16 +86,19 @@ export const WhyThangam: React.FC<WhyThangamProps> = ({
     <section
       id={id}
       ref={sectionRef}
-      className={`py-24 sm:py-32 bg-gradient-to-b from-[#4A0E1B] via-[#5A1426] to-[#4A0E1B] text-[#FFF8ED] relative overflow-hidden border-t border-white/10 ${className}`}
+      className={`py-24 sm:py-32 bg-gradient-to-b from-[#3B0D18] via-[#4A0E1B] to-[#3B0D18] text-[#FFF8ED] relative overflow-hidden border-t border-[#C6A15B]/20 ${className}`}
       aria-labelledby="why-thangam-heading"
     >
-      <Container size="default">
+      {/* Studio Blueprint Grid */}
+      <div className="absolute inset-0 studio-grid-overlay pointer-events-none opacity-30" aria-hidden="true" />
+
+      <Container size="wide" className="relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="mb-4 flex justify-center">
-            <Badge variant="dark" icon={<ShieldCheck className="w-3.5 h-3.5 text-[#FFF8ED]" />}>
-              Excellence & Distinction
-            </Badge>
+          <div className="mb-4 flex justify-center gap-2">
+            <TechLabel variant="gold" icon={<Award className="w-3.5 h-3.5" />}>
+              THE STUDIO PHILOSOPHY
+            </TechLabel>
           </div>
 
           <h2
@@ -96,28 +108,30 @@ export const WhyThangam: React.FC<WhyThangamProps> = ({
             THE PILLARS OF TRUST.
           </h2>
 
-          <p className="font-tamil text-base sm:text-xl font-medium text-[#FFF8ED]/90 mb-4">
+          <p className="font-tamil text-base sm:text-xl font-medium text-[#E0C078] mb-4">
             ஏன் தங்கம் டெக்கரேட்டர்ஸ் உங்கள் குடும்பத்தின் முதல் தேர்வு?
           </p>
 
           <p className="text-base text-[#F7F0E4]/85 font-light max-w-2xl mx-auto">
-            Authentic stage craftsmanship, direct proprietor accountability, and devotion to sacred milestone celebrations.
+            Authentic stage craftsmanship, direct proprietor accountability, and devotion to sacred milestone celebrations across Western Tamil Nadu.
           </p>
 
-          <div className="mt-6 h-[1.5px] w-20 bg-white/20 mx-auto" />
+          <GlowLine variant="gold" className="max-w-xs mx-auto mt-6" />
         </div>
 
-        {/* Pillars Grid */}
+        {/* Pillars Spatial Grid */}
         <div
           ref={statsRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16"
         >
           {pillars.map((item, index) => (
-            <div
+            <SpatialFrame
               key={index}
-              className="p-8 rounded-2xl bg-[#5A1426] border border-white/15 hover:border-white/30 transition-all duration-300 shadow-[0_4px_20px_rgba(74,14,27,0.3)] hover:shadow-lg group text-center flex flex-col items-center justify-between"
+              label={`PILLAR // 0${index + 1}`}
+              theme="dark"
+              className="p-8 text-center flex flex-col items-center justify-between group"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#6E1830] text-[#FFF8ED] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md border border-white/10">
+              <div className="w-12 h-12 rounded-xl bg-black/40 border border-[#C6A15B]/30 text-[#E0C078] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
                 {item.icon}
               </div>
 
@@ -126,61 +140,69 @@ export const WhyThangam: React.FC<WhyThangamProps> = ({
                   {item.title}
                 </div>
 
-                <div className="font-tamil text-xs font-semibold text-[#FFF8ED]/80 mb-3">
+                <div className="font-tamil text-xs font-semibold text-[#E0C078] mb-3">
                   {item.tamil}
                 </div>
 
-                <p className="text-xs text-[#F7F0E4]/75 leading-relaxed font-light">
+                <p className="text-xs text-[#F7F0E4]/80 leading-relaxed font-light">
                   {item.desc}
                 </p>
               </div>
-            </div>
+            </SpatialFrame>
           ))}
         </div>
 
         {/* Founder Trust Spotlight Box */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#5A1426] border border-white/15 shadow-[0_12px_40px_rgba(74,14,27,0.4)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-4 text-center lg:text-left">
-            <div className="w-20 h-20 rounded-2xl bg-[#6E1830] border-2 border-white/20 flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-md">
-              <span className="font-serif text-3xl font-bold text-[#FFF8ED]">PTS</span>
+        <SpatialFrame
+          label="MASTER SCENOGRAPHER DIRECT OVERSIGHT"
+          theme="dark"
+          className="p-8 sm:p-12"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-4 text-center lg:text-left">
+              <div className="w-20 h-20 rounded-2xl bg-black/50 border-2 border-[#C6A15B]/40 flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-xl">
+                <span className="font-serif text-3xl font-bold text-[#E0C078]">PTS</span>
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-[#FFF8ED]">
+                {siteConfig.brand.ownerName}
+              </h3>
+              <span className="text-xs uppercase tracking-widest text-[#E0C078] font-mono block mt-0.5">
+                Founder & Master Decorator
+              </span>
+              <span className="text-xs text-[#F7F0E4]/70 font-mono block mt-1">
+                Erode, Tamil Nadu (11.3410° N, 77.7172° E)
+              </span>
             </div>
-            <h3 className="font-serif text-2xl font-bold text-[#FFF8ED]">
-              P.T. Selvam
-            </h3>
-            <span className="text-xs uppercase tracking-widest text-[#FFF8ED]/80 font-semibold block mt-0.5">
-              Founder & Master Decorator
-            </span>
-            <span className="text-xs text-[#F7F0E4]/70 font-sans block mt-1">
-              Erode, Tamil Nadu
-            </span>
-          </div>
 
-          <div className="lg:col-span-8 space-y-4">
-            <blockquote className="text-base sm:text-lg text-[#F7F0E4]/90 font-light leading-relaxed font-serif italic">
-              "A wedding stage is not merely decor; it is the sacred backdrop where lifelong vows are made and family legacies celebrated. Every pillar, flower string, and light beam must be executed with unwavering devotion."
-            </blockquote>
+            <div className="lg:col-span-8 space-y-4">
+              <blockquote className="text-base sm:text-lg text-[#F7F0E4]/90 font-light leading-relaxed font-serif italic border-l-2 border-[#C6A15B] pl-4 sm:pl-6">
+                "A wedding stage is not merely decor; it is the sacred backdrop where lifelong vows are made and family legacies celebrated. Every pillar, flower string, and light beam must be executed with unwavering devotion."
+              </blockquote>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
-                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
-                <span>Zero Middlemen & Transparent Planning</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
-                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
-                <span>Prompt On-Time Setup Before Muhurtham</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
-                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
-                <span>100% In-House Structures & Materials</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-medium text-[#FFF8ED]">
-                <CheckCircle className="w-4 h-4 text-[#FFF8ED] flex-shrink-0" />
-                <span>Direct Proprietor Phone Accessibility</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div className="flex items-center gap-2 text-xs font-mono text-[#FFF8ED]">
+                  <CheckCircle className="w-4 h-4 text-[#E0C078] flex-shrink-0" />
+                  <span>Zero Middlemen & Transparent Planning</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-[#FFF8ED]">
+                  <CheckCircle className="w-4 h-4 text-[#E0C078] flex-shrink-0" />
+                  <span>Prompt On-Time Setup Before Muhurtham</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-[#FFF8ED]">
+                  <CheckCircle className="w-4 h-4 text-[#E0C078] flex-shrink-0" />
+                  <span>100% In-House Structures & Materials</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-[#FFF8ED]">
+                  <CheckCircle className="w-4 h-4 text-[#E0C078] flex-shrink-0" />
+                  <span>Direct Proprietor Phone Accessibility</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </SpatialFrame>
       </Container>
     </section>
   );
 };
+
+export default WhyThangam;

@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
+import { TechLabel } from './TechLabel';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -56,27 +59,32 @@ export const Modal: React.FC<ModalProps> = ({
       aria-modal="true"
       aria-labelledby={title ? 'modal-title' : undefined}
     >
-      {/* Backdrop */}
+      {/* Studio Backdrop */}
       <div
-        className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
+        className="fixed inset-0 bg-[#3B0D18]/90 backdrop-blur-md transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Modal Dialog Card */}
+      {/* Modal Dialog Spatial Card */}
       <div
         ref={modalRef}
-        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#FFF8ED] border border-[#6E1830]/20 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-8 transition-all duration-300 text-[#1F161A] ${className}`}
+        className={`relative w-full ${maxWidthClasses[maxWidth]} bg-[#3B0D18] border border-[#C6A15B]/40 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-8 transition-all duration-300 text-[#FFF8ED] ${className}`}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#6E1830]/15">
+        {/* Top Header */}
+        <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#C6A15B]/20">
           {title ? (
-            <h3
-              id="modal-title"
-              className="text-2xl sm:text-3xl font-serif font-bold text-[#6E1830]"
-            >
-              {title}
-            </h3>
+            <div className="flex flex-col gap-1">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#E0C078]">
+                STUDIO INTAKE SUITE
+              </span>
+              <h3
+                id="modal-title"
+                className="text-2xl sm:text-3xl font-serif font-bold text-[#FFF8ED]"
+              >
+                {title}
+              </h3>
+            </div>
           ) : (
             <span />
           )}
@@ -85,9 +93,9 @@ export const Modal: React.FC<ModalProps> = ({
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="p-2 -mr-2 text-[#6E1830]/70 hover:text-[#6E1830] hover:bg-[#F7F0E4] rounded-xl transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#6E1830]"
+            className="p-2 -mr-2 text-[#FFF8ED]/70 hover:text-[#E0C078] hover:bg-white/10 rounded-xl transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#E0C078]"
           >
-            <X className="w-5 h-5 text-[#6E1830]" />
+            <X className="w-5 h-5" />
           </button>
         </div>
 
@@ -97,3 +105,5 @@ export const Modal: React.FC<ModalProps> = ({
     </div>
   );
 };
+
+export default Modal;

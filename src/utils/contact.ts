@@ -2,15 +2,31 @@ import { siteConfig } from '../config/site';
 
 /**
  * Generates a valid WhatsApp click-to-chat URL.
+ * Supports both signatures: (message, customNumber) and (customNumber, message).
  * Returns null if the WhatsApp number is not configured.
  *
- * @param message Optional pre-filled text message
- * @param customNumber Optional specific number override
+ * @param param1 Optional pre-filled text message or phone number
+ * @param param2 Optional specific number override or pre-filled message
  */
 export function generateWhatsAppUrl(
-  message?: string,
-  customNumber?: string | null
+  param1?: string | null,
+  param2?: string | null
 ): string | null {
+  let message: string | undefined;
+  let customNumber: string | null | undefined;
+
+  // Determine parameter order
+  const isPhoneLike = (str?: string | null) =>
+    str ? /^\+?[0-9\s-]{7,16}$/.test(str.trim()) : false;
+
+  if (isPhoneLike(param1) && param2 && !isPhoneLike(param2)) {
+    customNumber = param1;
+    message = param2;
+  } else {
+    message = param1 ?? undefined;
+    customNumber = param2;
+  }
+
   const number = customNumber ?? siteConfig.contact.whatsappNumber;
 
   if (!number) {

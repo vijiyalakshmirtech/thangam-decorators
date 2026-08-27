@@ -16,15 +16,15 @@ export const Badge: React.FC<BadgeProps> = ({
   icon,
 }) => {
   const variantClasses: Record<BadgeVariant, string> = {
-    gold: 'bg-[#6E1830]/10 text-[#6E1830] border border-[#6E1830]/25',
-    dark: 'bg-[#5A1426] text-[#FFF8ED] border border-white/20',
-    emerald: 'bg-[#134E39]/15 text-[#134E39] border border-[#134E39]/30',
-    maroon: 'bg-[#6E1830]/10 text-[#6E1830] border border-[#6E1830]/25',
+    gold: 'bg-[#3B0D18]/90 text-[#E0C078] border border-[#C6A15B]/35 shadow-sm',
+    dark: 'bg-[#3B0D18] text-[#FFF8ED] border border-white/20',
+    emerald: 'bg-[#134E39]/30 text-[#25D366] border border-[#25D366]/30',
+    maroon: 'bg-[#6E1830]/80 text-[#FFF8ED] border border-[#C6A15B]/25',
   };
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider backdrop-blur-sm ${variantClasses[variant]} ${className}`}
     >
       {icon && <span className="flex-shrink-0">{icon}</span>}
       <span>{children}</span>
